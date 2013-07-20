@@ -951,8 +951,8 @@ static char ja_kvoContext;
 #pragma mark - Public Methods
 
 - (UIBarButtonItem *)leftButtonForCenterPanel {
-  UIImage *image = [UIImage imageNamed:@"menu"];
-  CGRect frame = CGRectMake(0, 0, 30, 22);
+  UIImage *image = [UIImage imageNamed:@"menu1"];
+  CGRect frame = CGRectMake(0, 0, 38, 22);
   UIButton *button = [[UIButton alloc] initWithFrame:frame];
   [button setBackgroundImage:image forState:UIControlStateNormal];
   [button addTarget:self action:@selector(toggleLeftPanel:) forControlEvents:UIControlEventTouchUpInside];

@@ -38,6 +38,7 @@
 		CACD1715179B245C0021C4C8 /* football.png in Resources */ = {isa = PBXBuildFile; fileRef = CACD1710179B245C0021C4C8 /* football.png */; };
 		CACD1716179B245C0021C4C8 /* pingpang.png in Resources */ = {isa = PBXBuildFile; fileRef = CACD1711179B245C0021C4C8 /* pingpang.png */; };
 		CACD1717179B245C0021C4C8 /* tennisball.png in Resources */ = {isa = PBXBuildFile; fileRef = CACD1712179B245C0021C4C8 /* tennisball.png */; };
+		CAD22035179B39E700A2CFFB /* menu1.png in Resources */ = {isa = PBXBuildFile; fileRef = CAD22034179B39E700A2CFFB /* menu1.png */; };
 		CADF9DC9179AE78500229C08 /* CHAvatarView.m in Sources */ = {isa = PBXBuildFile; fileRef = CADF9DC2179AE78500229C08 /* CHAvatarView.m */; };
 		CADF9DCA179AE78500229C08 /* CHDraggableView+Avatar.m in Sources */ = {isa = PBXBuildFile; fileRef = CADF9DC4179AE78500229C08 /* CHDraggableView+Avatar.m */; };
 		CADF9DCB179AE78500229C08 /* CHDraggableView.m in Sources */ = {isa = PBXBuildFile; fileRef = CADF9DC6179AE78500229C08 /* CHDraggableView.m */; };
@@ -138,6 +139,7 @@
 		CACD1710179B245C0021C4C8 /* football.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = football.png; sourceTree = "<group>"; };
 		CACD1711179B245C0021C4C8 /* pingpang.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pingpang.png; sourceTree = "<group>"; };
 		CACD1712179B245C0021C4C8 /* tennisball.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tennisball.png; sourceTree = "<group>"; };
+		CAD22034179B39E700A2CFFB /* menu1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = menu1.png; sourceTree = "<group>"; };
 		CADF9DC1179AE78500229C08 /* CHAvatarView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHAvatarView.h; sourceTree = "<group>"; };
 		CADF9DC2179AE78500229C08 /* CHAvatarView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHAvatarView.m; sourceTree = "<group>"; };
 		CADF9DC3179AE78500229C08 /* CHDraggableView+Avatar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CHDraggableView+Avatar.h"; sourceTree = "<group>"; };
@@ -334,6 +336,7 @@
 		B5C2F430179A6D990049B8A8 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				CAD22034179B39E700A2CFFB /* menu1.png */,
 				CADF9DFF179B139D00229C08 /* menu.png */,
 				CACD170E179B245C0021C4C8 /* badminton.png */,
 				CACD170F179B245C0021C4C8 /* basketball.png */,
@@ -482,6 +485,7 @@
 				CADF9DFB179AF8BC00229C08 /* ArrowRight@2x.png in Resources */,
 				CADF9E00179B139D00229C08 /* menu.png in Resources */,
 				CACD1716179B245C0021C4C8 /* pingpang.png in Resources */,
+				CAD22035179B39E700A2CFFB /* menu1.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
