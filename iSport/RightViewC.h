@@ -7,13 +7,17 @@
 //
 
 #import <UIKit/UIKit.h>
+
 #import "JASidePanelController.h"
 #import "UIViewController+JASidePanel.h"
 #import "LeftViewC.h"
 #import "CenterViewC.h"
 #import "BMapKit.h"
-
+@class CalloutMapAnnotation;
 @interface RightViewC : UIViewController<BMKMapViewDelegate,BMKAnnotation>
+
 @property(nonatomic ,retain) BMKMapView* mapView;
-@property(nonatomic ,retain) BMKPointAnnotation* theAnnotation;
+@property(nonatomic ,retain) CalloutMapAnnotation* theAnnotation;
+
+@property(nonatomic ,retain) NSArray *annotations;
 @end
