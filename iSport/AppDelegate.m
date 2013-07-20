@@ -34,6 +34,7 @@
     self.viewController = [JASidePanelController new];
     self.viewController.shouldDelegateAutorotateToVisiblePanel = NO;
     self.viewController.leftPanel = [LeftViewC new];
+    self.viewController.leftGapPercentage = 0.4;
     self.viewController.rightPanel = [RightViewC new];
     self.viewController.centerPanel = [[UINavigationController alloc]initWithRootViewController:[CenterViewC new]];
     self.window.rootViewController = self.viewController;
