@@ -13,7 +13,7 @@
 @protocol CHDraggingCoordinatorDelegate;
 @interface CHDraggingCoordinator : NSObject <CHDraggableViewDelegate>
 
-@property (nonatomic, weak) id<CHDraggingCoordinatorDelegate> delegate;
+@property (nonatomic, assign) id<CHDraggingCoordinatorDelegate> delegate;
 
 - (id)initWithWindow:(UIWindow *)window draggableViewBounds:(CGRect)bounds;
 

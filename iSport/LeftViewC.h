@@ -11,6 +11,7 @@
 #import "UIViewController+JASidePanel.h"
 #import "RightViewC.h"
 #import "CenterViewC.h"
+#import "sportMessage.h"
 @interface LeftViewC : UIViewController
 
 @end

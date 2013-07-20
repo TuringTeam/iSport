@@ -23,7 +23,7 @@
     self = [super initWithFrame:frame];
     if (self) {
         
-        self.layer.shadowColor = [UIColor blackColor].CGColor;
+        self.layer.shadowColor = [UIColor clearColor].CGColor;
         self.layer.shadowOffset = CGSizeMake(0,2);
         self.layer.shadowRadius = 2;
         self.layer.shadowOpacity = 0.7f;
@@ -57,7 +57,7 @@
         CGContextAddPath(ctx, circlePath);
         CGContextClip(ctx);
         
-        CGContextSetShadowWithColor(ctx, CGSizeMake(0, 0), 3.0f, [UIColor colorWithRed:0.994 green:0.989 blue:1.000 alpha:1.0f].CGColor);
+        CGContextSetShadowWithColor(ctx, CGSizeMake(0, 0), 3.0f, [UIColor colorWithWhite:1.000 alpha:0.000].CGColor);
         
         CGContextBeginPath(ctx);
         CGContextAddPath(ctx, inverseCirclePath);
