@@ -8,7 +8,11 @@
 
 #import <UIKit/UIKit.h>
 @class JASidePanelController;
-@interface AppDelegate : UIResponder <UIApplicationDelegate>
+@class BMKMapManager;
+@interface AppDelegate : UIResponder <UIApplicationDelegate>{
+
+    BMKMapManager* _mapManager;
+}
 
 @property (nonatomic, retain) UIWindow *window;
 @property (nonatomic, retain) JASidePanelController *viewController;

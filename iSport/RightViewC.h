@@ -7,10 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
+
 #import "JASidePanelController.h"
 #import "UIViewController+JASidePanel.h"
 #import "LeftViewC.h"
 #import "CenterViewC.h"
-@interface RightViewC : UIViewController
-
+#import "BMapKit.h"
+@interface RightViewC : UIViewController<BMKMapViewDelegate,BMKAnnotation>
+@property(nonatomic ,retain) BMKMapView* mapView;
+@property(nonatomic ,retain) BMKPointAnnotation* theAnnotation;
 @end
