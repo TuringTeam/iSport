@@ -7,7 +7,10 @@
 //
 
 #import "AppDelegate.h"
-
+#import "CenterViewC.h"
+#import "LeftViewC.h"
+#import "RightViewC.h"
+#import "JASidePanelController.h"
 @implementation AppDelegate
 
 - (void)dealloc
@@ -19,7 +22,12 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     self.window = [[[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]] autorelease];
-    // Override point for customization after application launch.
+    self.viewController = [JASidePanelController new];
+    self.viewController.shouldDelegateAutorotateToVisiblePanel = NO;
+    self.viewController.leftPanel = [LeftViewC new];
+    self.viewController.rightPanel = [RightViewC new];
+    self.viewController.centerPanel = [[UINavigationController alloc]initWithRootViewController:[CenterViewC new]];
+    self.window.rootViewController = self.viewController;
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
     return YES;

@@ -7,9 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
-
+@class JASidePanelController;
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 
-@property (strong, nonatomic) UIWindow *window;
-
+@property (nonatomic, retain) UIWindow *window;
+@property (nonatomic, retain) JASidePanelController *viewController;
 @end

@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B50E6FC5179A88A900ABF9CA /* JASidePanelController.m in Sources */ = {isa = PBXBuildFile; fileRef = B50E6FC2179A88A900ABF9CA /* JASidePanelController.m */; };
+		B50E6FC6179A88A900ABF9CA /* UIViewController+JASidePanel.m in Sources */ = {isa = PBXBuildFile; fileRef = B50E6FC4179A88A900ABF9CA /* UIViewController+JASidePanel.m */; };
+		B50E6FD0179A89E300ABF9CA /* CenterViewC.m in Sources */ = {isa = PBXBuildFile; fileRef = B50E6FCF179A89E300ABF9CA /* CenterViewC.m */; };
+		B50E6FD3179A89EF00ABF9CA /* LeftViewC.m in Sources */ = {isa = PBXBuildFile; fileRef = B50E6FD2179A89EF00ABF9CA /* LeftViewC.m */; };
+		B50E6FD6179A89FF00ABF9CA /* RightViewC.m in Sources */ = {isa = PBXBuildFile; fileRef = B50E6FD5179A89FE00ABF9CA /* RightViewC.m */; };
 		B5C2F42A179A6D990049B8A8 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5C2F429179A6D990049B8A8 /* UIKit.framework */; };
 		B5C2F42C179A6D990049B8A8 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5C2F42B179A6D990049B8A8 /* Foundation.framework */; };
 		B5C2F42E179A6D990049B8A8 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5C2F42D179A6D990049B8A8 /* CoreGraphics.framework */; };
@@ -19,6 +24,16 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		B50E6FC1179A88A900ABF9CA /* JASidePanelController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JASidePanelController.h; sourceTree = "<group>"; };
+		B50E6FC2179A88A900ABF9CA /* JASidePanelController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JASidePanelController.m; sourceTree = "<group>"; };
+		B50E6FC3179A88A900ABF9CA /* UIViewController+JASidePanel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+JASidePanel.h"; sourceTree = "<group>"; };
+		B50E6FC4179A88A900ABF9CA /* UIViewController+JASidePanel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+JASidePanel.m"; sourceTree = "<group>"; };
+		B50E6FCE179A89E300ABF9CA /* CenterViewC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CenterViewC.h; sourceTree = "<group>"; };
+		B50E6FCF179A89E300ABF9CA /* CenterViewC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CenterViewC.m; sourceTree = "<group>"; };
+		B50E6FD1179A89EF00ABF9CA /* LeftViewC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LeftViewC.h; sourceTree = "<group>"; };
+		B50E6FD2179A89EF00ABF9CA /* LeftViewC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LeftViewC.m; sourceTree = "<group>"; };
+		B50E6FD4179A89FE00ABF9CA /* RightViewC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RightViewC.h; sourceTree = "<group>"; };
+		B50E6FD5179A89FE00ABF9CA /* RightViewC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RightViewC.m; sourceTree = "<group>"; };
 		B5C2F426179A6D990049B8A8 /* iSport.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iSport.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B5C2F429179A6D990049B8A8 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		B5C2F42B179A6D990049B8A8 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -48,6 +63,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B50E6FC7179A88C200ABF9CA /* JASidePanel */ = {
+			isa = PBXGroup;
+			children = (
+				B50E6FC1179A88A900ABF9CA /* JASidePanelController.h */,
+				B50E6FC2179A88A900ABF9CA /* JASidePanelController.m */,
+				B50E6FC3179A88A900ABF9CA /* UIViewController+JASidePanel.h */,
+				B50E6FC4179A88A900ABF9CA /* UIViewController+JASidePanel.m */,
+			);
+			name = JASidePanel;
+			sourceTree = "<group>";
+		};
 		B5C2F41D179A6D990049B8A8 = {
 			isa = PBXGroup;
 			children = (
@@ -80,6 +106,13 @@
 			children = (
 				B5C2F438179A6D990049B8A8 /* AppDelegate.h */,
 				B5C2F439179A6D990049B8A8 /* AppDelegate.m */,
+				B50E6FCE179A89E300ABF9CA /* CenterViewC.h */,
+				B50E6FCF179A89E300ABF9CA /* CenterViewC.m */,
+				B50E6FD1179A89EF00ABF9CA /* LeftViewC.h */,
+				B50E6FD2179A89EF00ABF9CA /* LeftViewC.m */,
+				B50E6FD4179A89FE00ABF9CA /* RightViewC.h */,
+				B50E6FD5179A89FE00ABF9CA /* RightViewC.m */,
+				B50E6FC7179A88C200ABF9CA /* JASidePanel */,
 				B5C2F430179A6D990049B8A8 /* Supporting Files */,
 			);
 			path = iSport;
@@ -166,6 +199,11 @@
 			files = (
 				B5C2F436179A6D990049B8A8 /* main.m in Sources */,
 				B5C2F43A179A6D990049B8A8 /* AppDelegate.m in Sources */,
+				B50E6FC5179A88A900ABF9CA /* JASidePanelController.m in Sources */,
+				B50E6FC6179A88A900ABF9CA /* UIViewController+JASidePanel.m in Sources */,
+				B50E6FD0179A89E300ABF9CA /* CenterViewC.m in Sources */,
+				B50E6FD3179A89EF00ABF9CA /* LeftViewC.m in Sources */,
+				B50E6FD6179A89FF00ABF9CA /* RightViewC.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -243,6 +281,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "iSport/iSport-Prefix.pch";
 				INFOPLIST_FILE = "iSport/iSport-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -254,6 +293,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "iSport/iSport-Prefix.pch";
 				INFOPLIST_FILE = "iSport/iSport-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -278,6 +318,7 @@
 				B5C2F445179A6D990049B8A8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
