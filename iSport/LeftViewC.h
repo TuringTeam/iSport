@@ -11,6 +11,6 @@
 #import "UIViewController+JASidePanel.h"
 #import "RightViewC.h"
 #import "CenterViewC.h"
-@interface LeftViewC : UIViewController
-
+@interface LeftViewC : UIViewController<UITableViewDataSource,UITableViewDelegate>
+@property(nonatomic,retain) UITableView *tableView;
 @end

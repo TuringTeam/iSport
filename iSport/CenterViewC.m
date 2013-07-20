@@ -59,7 +59,6 @@
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
         tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     }
-    
     return cell;
 }
 
