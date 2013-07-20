@@ -108,9 +108,9 @@
   if (sport.message) {
     [self.messageLabel setText:sport.message];
   }
-  if (sport.address) {
-    [self.distanceLabel setText:sport.address];
-  }
+//  if (sport.address) {
+//    [self.distanceLabel setText:sport.address];
+//  }
   if (sport.pubTimeStr) {
     [self.publishTimeLabel setText:sport.pubTimeStr];
   }
@@ -120,19 +120,19 @@
   
   switch (sport.ballType) {
     case kBasketball:
-      [self.sportImage setImage:[UIImage imageNamed:@"basketball"]];
+      [self.sportImage setImage:[UIImage imageNamed:@"markbasketball"]];
       break;
     case kFootball:
-      [self.sportImage setImage:[UIImage imageNamed:@"football"]];
+      [self.sportImage setImage:[UIImage imageNamed:@"markfootball"]];
       break;
       case kBadminton:
-      [self.sportImage setImage:[UIImage imageNamed:@"badminton"]];
+      [self.sportImage setImage:[UIImage imageNamed:@"markbadminton"]];
       break;
       case kTennisBall:
-      [self.sportImage setImage:[UIImage imageNamed:@"tinnisball"]];
+      [self.sportImage setImage:[UIImage imageNamed:@"marktinnisball"]];
       break;
       case kPingpong:
-      [self.sportImage setImage:[UIImage imageNamed:@"pingpang"]];
+      [self.sportImage setImage:[UIImage imageNamed:@"markpingpang"]];
       break;
     default:
       break;

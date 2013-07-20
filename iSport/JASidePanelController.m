@@ -964,8 +964,8 @@ static char ja_kvoContext;
 }
 
 - (UIBarButtonItem *)rightButtonForCenterPanl {
-  UIImage *image = [UIImage imageNamed:@"menu"];
-  CGRect frame = CGRectMake(0, 0, 30, 22);
+  UIImage *image = [UIImage imageNamed:@"menu2"];
+  CGRect frame = CGRectMake(0, 0, 38, 22);
   UIButton *button = [[UIButton alloc] initWithFrame:frame];
   [button setBackgroundImage:image forState:UIControlStateNormal];
   [button addTarget:self action:@selector(toggleRightPanel:) forControlEvents:UIControlEventTouchUpInside];

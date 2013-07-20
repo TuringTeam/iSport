@@ -12,6 +12,9 @@
 #import "LeftViewC.h"
 #import "RightViewC.h"
 #import "JASidePanelController.h"
+#import "MLNavigationController.h"
+#import "UIView+customBackground.h"
+
 @implementation AppDelegate
 
 - (void)dealloc
@@ -36,7 +39,13 @@
     self.viewController.leftPanel = [LeftViewC new];
     self.viewController.leftGapPercentage = 0.4;
     self.viewController.rightPanel = [RightViewC new];
-    self.viewController.centerPanel = [[UINavigationController alloc]initWithRootViewController:[CenterViewC new]];
+  
+  MLNavigationController *navCtrl = [[[MLNavigationController alloc]initWithRootViewController:[CenterViewC new]]autorelease];
+  self.viewController.centerPanel = navCtrl;
+  
+    //self.viewController.centerPanel = [[UINavigationController alloc]initWithRootViewController:[CenterViewC new]];
+  [self.viewController.centerPanel.view custom:[navCtrl navigationBar]];
+  
     self.window.rootViewController = self.viewController;
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];

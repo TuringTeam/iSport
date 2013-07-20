@@ -7,7 +7,7 @@
 //
 
 #import "CenterViewC.h"
-#import "MsgCell.h"
+//#import "MsgCell.h"
 #import "CenterViewCell.h"
 #import "ListTableView.h"
 #import "DetailViewController.h"
@@ -30,8 +30,8 @@
     sport.message = [NSString stringWithFormat:@"清华大学校篮球社，假期没事，组团打篮球，有一起的的么？篮球已有还缺五人!"];
     sport.pubTimeStr = [NSString stringWithFormat:@"%d分钟前",i+1];
     sport.endTimeDataStr = [NSString stringWithFormat:@"%d小时后",i+1];
-    sport.address = [NSString stringWithFormat:@"1000m"];
-    sport.remarks = [NSString stringWithFormat:@"remarks%d",i];
+    //sport.address = [NSString stringWithFormat:@"1000m"];
+   // sport.remarks = [NSString stringWithFormat:@"remarks%d",i];
     sport.ballType = kBasketball;
     [self.listArray addObject:sport];
   }

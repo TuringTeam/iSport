@@ -7,18 +7,22 @@
 //
 
 #import "DetailViewController.h"
+#import "ListTableView.h"
 
 @interface DetailViewController ()
+
+@property (nonatomic, strong) UITableView *tableView;
 
 @end
 
 @implementation DetailViewController
+@synthesize tableView = tableView_;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
   self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
   if (self) {
-    // Custom initialization
+    
   }
   return self;
 }
@@ -26,8 +30,10 @@
 - (void)viewDidLoad
 {
   [super viewDidLoad];
-  self.view.backgroundColor = [UIColor colorWithPatternImage:
-                               [UIImage imageNamed:@"BackgroundTextures.png"]];
+  
+  self.tableView = [[ListTableView alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+  
+  [self.view addSubview:self.tableView];
   
   UIImage *image = [UIImage imageNamed:@"back"];
   UIButton *barButton = [UIButton buttonWithType:UIButtonTypeCustom];
