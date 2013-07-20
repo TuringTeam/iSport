@@ -11,7 +11,7 @@
 #import "UIViewController+JASidePanel.h"
 #import "RightViewC.h"
 #import "CenterViewC.h"
-#import "sportMessage.h"
-@interface LeftViewC : UIViewController
-
+@interface LeftViewC : UIViewController<UITableViewDataSource,UITableViewDelegate>
+@property(nonatomic,retain) UITableView *tableView;
+@property(nonatomic,retain) NSMutableArray *listArray;
 @end
