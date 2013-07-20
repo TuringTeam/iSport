@@ -1,5 +1,5 @@
 //
-//  CenterViewCell.h
+//  ListTableView.h
 //  iSport
 //
 //  Created by Edward on 13-7-20.
@@ -8,10 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-#define CellDefaultHeight				77
-
-@interface CenterViewCell : UITableViewCell
-
-- (void)bindCellObject:(id)object;
+@interface ListTableView : UITableView
 
 @end

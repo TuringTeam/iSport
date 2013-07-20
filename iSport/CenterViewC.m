@@ -8,7 +8,9 @@
 
 #import "CenterViewC.h"
 #import "MsgCell.h"
+#import "CenterViewCell.h"
 #import "ListTableView.h"
+#import "DetailViewController.h"
 
 @interface CenterViewC ()
 
@@ -19,17 +21,36 @@
 - (void)viewDidLoad
 {
   [super viewDidLoad];
-  //self.view.backgroundColor = [UIColor colorWithRed:0.361 green:0.573 blue:0.573 alpha:1.000];
-  _listArray = [NSMutableArray new];
-//	_tableView = [[UITableView alloc]initWithFrame:CGRectMake(0,0,
-//                                                            self.view.frame.size.width,
-//                                                            self.view.frame.size.height)];
-//  
+  
+  self.listArray = [NSMutableArray new];
+  
+  for (NSInteger i = 0; i < 30; i++) {
+    sportMessage *sport = [[sportMessage alloc] init];
+    sport.ID = [NSString stringWithFormat:@"ID%d",i];
+    sport.message = [NSString stringWithFormat:@"清华大学校篮球社，假期没事，组团打篮球，有一起的的么？篮球已有还缺五人!"];
+    sport.pubTimeStr = [NSString stringWithFormat:@"%d分钟前",i+1];
+    sport.endTimeDataStr = [NSString stringWithFormat:@"%d小时后",i+1];
+    sport.address = [NSString stringWithFormat:@"1000m"];
+    sport.remarks = [NSString stringWithFormat:@"remarks%d",i];
+    sport.ballType = kBasketball;
+    [self.listArray addObject:sport];
+  }
+  
   self.tableView = [[ListTableView alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
   _tableView.delegate=self;
   _tableView.dataSource=self;
   _tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
   [self.view addSubview:_tableView];
+  
+}
+
+-(NSString *)getDate
+{
+  NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+  [formatter setDateFormat:@"MM-dd HH:mm:ss"];
+  NSString *locationString=[formatter stringFromDate: [NSDate date]];
+  [formatter release];
+  return locationString;
 }
 
 #pragma mark -
@@ -37,14 +58,13 @@
 
 /** 返回一共有多少列*/
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-  return 55;
+  return self.listArray.count;
 }
 
 /** 行高*/
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-  return 72;
-  
+  return CellDefaultHeight;
   
 }
 
@@ -56,21 +76,24 @@
 /** 创建TableViewCell*/
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-  static NSString *identifiy = @"MsgCell";
-  MsgCell *cell= [tableView dequeueReusableCellWithIdentifier:identifiy];
   
-  if (cell == nil) {
-    cell = [[[NSBundle mainBundle] loadNibNamed:@"MsgCell" owner:self options:nil]  objectAtIndex:0];
-    cell.selectionStyle = UITableViewCellSelectionStyleNone;
-    tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+  static NSString *cellIdentifier = @"CenterCell";
+  CenterViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
+  if (!cell) {
+    cell = [[CenterViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier];
   }
+  
+  cell.selectionStyle = UITableViewCellSelectionStyleNone;
+  cell.accessoryView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"ArrowRight"]];
+  [cell bindCellObject:[self.listArray objectAtIndex:indexPath.row]];
   
   return cell;
 }
 
 /** 处理Cell点击*/
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-  
+  DetailViewController *detailVC = [[DetailViewController alloc] initWithNibName:nil bundle:nil];
+  [self.navigationController pushViewController:detailVC animated:YES];
 }
 
 - (void)didReceiveMemoryWarning

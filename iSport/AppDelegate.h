@@ -10,11 +10,9 @@
 @class JASidePanelController;
 @class BMKMapManager;
 @interface AppDelegate : UIResponder <UIApplicationDelegate>{
-
     BMKMapManager* _mapManager;
 }
 
 @property (nonatomic, retain) UIWindow *window;
 @property (nonatomic, retain) JASidePanelController *viewController;
-@property (nonatomic, strong) UINavigationController *navigationController;
 @end
