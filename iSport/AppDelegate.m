@@ -36,6 +36,7 @@
     self.viewController.leftPanel = [LeftViewC new];
     self.viewController.rightPanel = [RightViewC new];
     self.viewController.centerPanel = [[UINavigationController alloc]initWithRootViewController:[CenterViewC new]];
+    self.viewController.rightGapPercentage = 1;
     self.window.rootViewController = self.viewController;
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];

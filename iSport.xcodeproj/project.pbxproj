@@ -8,11 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		04E81A84179A8EA800FC6BA7 /* mapapi.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 04E81A83179A8EA800FC6BA7 /* mapapi.bundle */; };
-		04E81A86179A90A700FC6BA7 /* libbaidumapapi.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 04E81A85179A90A700FC6BA7 /* libbaidumapapi.a */; };
 		04E81A88179A913C00FC6BA7 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04E81A87179A913C00FC6BA7 /* QuartzCore.framework */; };
 		04E81A8A179A91E100FC6BA7 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04E81A89179A91E100FC6BA7 /* CoreLocation.framework */; };
 		04E81A8C179A91E900FC6BA7 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04E81A8B179A91E900FC6BA7 /* SystemConfiguration.framework */; };
 		04E81A8E179A920400FC6BA7 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04E81A8D179A920400FC6BA7 /* OpenGLES.framework */; };
+		04E81A90179AA11700FC6BA7 /* libbaidumapapi.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 04E81A8F179AA11700FC6BA7 /* libbaidumapapi.a */; };
 		B50E6FC5179A88A900ABF9CA /* JASidePanelController.m in Sources */ = {isa = PBXBuildFile; fileRef = B50E6FC2179A88A900ABF9CA /* JASidePanelController.m */; settings = {COMPILER_FLAGS = "-fobjc-arc"; }; };
 		B50E6FC6179A88A900ABF9CA /* UIViewController+JASidePanel.m in Sources */ = {isa = PBXBuildFile; fileRef = B50E6FC4179A88A900ABF9CA /* UIViewController+JASidePanel.m */; };
 		B50E6FD0179A89E300ABF9CA /* CenterViewC.m in Sources */ = {isa = PBXBuildFile; fileRef = B50E6FCF179A89E300ABF9CA /* CenterViewC.m */; };
@@ -60,11 +60,11 @@
 		04E81A81179A8EA800FC6BA7 /* BMKUserLocation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BMKUserLocation.h; sourceTree = "<group>"; };
 		04E81A82179A8EA800FC6BA7 /* BMKVersion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BMKVersion.h; sourceTree = "<group>"; };
 		04E81A83179A8EA800FC6BA7 /* mapapi.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = mapapi.bundle; sourceTree = "<group>"; };
-		04E81A85179A90A700FC6BA7 /* libbaidumapapi.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libbaidumapapi.a; sourceTree = "<group>"; };
 		04E81A87179A913C00FC6BA7 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		04E81A89179A91E100FC6BA7 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		04E81A8B179A91E900FC6BA7 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		04E81A8D179A920400FC6BA7 /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
+		04E81A8F179AA11700FC6BA7 /* libbaidumapapi.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libbaidumapapi.a; sourceTree = "<group>"; };
 		B50E6FC1179A88A900ABF9CA /* JASidePanelController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JASidePanelController.h; sourceTree = "<group>"; };
 		B50E6FC2179A88A900ABF9CA /* JASidePanelController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JASidePanelController.m; sourceTree = "<group>"; };
 		B50E6FC3179A88A900ABF9CA /* UIViewController+JASidePanel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+JASidePanel.h"; sourceTree = "<group>"; };
@@ -102,7 +102,7 @@
 				B5C2F42A179A6D990049B8A8 /* UIKit.framework in Frameworks */,
 				B5C2F42C179A6D990049B8A8 /* Foundation.framework in Frameworks */,
 				B5C2F42E179A6D990049B8A8 /* CoreGraphics.framework in Frameworks */,
-				04E81A86179A90A700FC6BA7 /* libbaidumapapi.a in Frameworks */,
+				04E81A90179AA11700FC6BA7 /* libbaidumapapi.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -112,7 +112,7 @@
 		04E81A64179A8E7C00FC6BA7 /* BMapSDK */ = {
 			isa = PBXGroup;
 			children = (
-				04E81A85179A90A700FC6BA7 /* libbaidumapapi.a */,
+				04E81A8F179AA11700FC6BA7 /* libbaidumapapi.a */,
 				04E81A65179A8EA800FC6BA7 /* inc */,
 				04E81A83179A8EA800FC6BA7 /* mapapi.bundle */,
 			);
@@ -376,6 +376,8 @@
 		B5C2F444179A6D990049B8A8 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer: Hongzhou Zheng (YV2RM48U87)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Hongzhou Zheng (YV2RM48U87)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "iSport/iSport-Prefix.pch";
 				INFOPLIST_FILE = "iSport/iSport-Info.plist";
@@ -385,6 +387,8 @@
 					"\"$(SRCROOT)/iSport\"",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "08EA5AB2-4739-42BB-B826-9AF58DA3E54E";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "08EA5AB2-4739-42BB-B826-9AF58DA3E54E";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -392,6 +396,8 @@
 		B5C2F445179A6D990049B8A8 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer: Hongzhou Zheng (YV2RM48U87)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Hongzhou Zheng (YV2RM48U87)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "iSport/iSport-Prefix.pch";
 				INFOPLIST_FILE = "iSport/iSport-Info.plist";
@@ -401,6 +407,8 @@
 					"\"$(SRCROOT)/iSport\"",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "08EA5AB2-4739-42BB-B826-9AF58DA3E54E";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "08EA5AB2-4739-42BB-B826-9AF58DA3E54E";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

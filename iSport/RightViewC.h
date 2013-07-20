@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "BMapKit.h"
-@interface RightViewC : UIViewController<BMKMapViewDelegate>
+@interface RightViewC : UIViewController<BMKMapViewDelegate,BMKAnnotation>
 @property(nonatomic ,retain) BMKMapView* mapView;
+@property(nonatomic ,retain) BMKPointAnnotation* theAnnotation;
 @end
