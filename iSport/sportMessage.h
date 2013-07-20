@@ -18,5 +18,6 @@
 @property(nonatomic,retain) NSString *address;  //活动地址
 @property(nonatomic,retain) NSString *remarks; //备注
 @property(nonatomic,retain) UIImage *headImage;  //用户头像
-
+@property(nonatomic,assign) double longitude;  //经度
+@property(nonatomic,assign) double latitude;  //纬度
 @end
