@@ -36,7 +36,7 @@
     NSTimeInterval endTimer =[self.endTimeDate timeIntervalSinceNow];
     int endHour = (int)(endTimer/3600);
     int endMinute = (int)(endTimer-hour*3600)/60;
-    if (endHour == 0 ) {
+    if (endHour == 0) {
         self.endTimeDataStr = [NSString stringWithFormat:@"%d分钟后",endMinute];
         if (endMinute == 0) {
             self.endTimeDataStr = [NSString stringWithFormat:@"1分钟后"];
