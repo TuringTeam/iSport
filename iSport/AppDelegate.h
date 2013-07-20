@@ -10,7 +10,6 @@
 @class JASidePanelController;
 @class BMKMapManager;
 @interface AppDelegate : UIResponder <UIApplicationDelegate>{
-
     BMKMapManager* _mapManager;
 }
 
