@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-
-@interface RightViewC : UIViewController
-
+#import "BMapKit.h"
+@interface RightViewC : UIViewController<BMKMapViewDelegate>
+@property(nonatomic ,retain) BMKMapView* mapView;
 @end
