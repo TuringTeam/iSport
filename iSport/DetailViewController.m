@@ -45,6 +45,11 @@
 	[self.navigationController popViewControllerAnimated:YES];
 }
 
+- (void)setUpSubViews
+{
+	
+}
+
 - (void)didReceiveMemoryWarning
 {
   [super didReceiveMemoryWarning];
