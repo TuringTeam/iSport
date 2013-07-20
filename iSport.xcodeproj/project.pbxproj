@@ -25,6 +25,13 @@
 		B50E6FD0179A89E300ABF9CA /* CenterViewC.m in Sources */ = {isa = PBXBuildFile; fileRef = B50E6FCF179A89E300ABF9CA /* CenterViewC.m */; };
 		B50E6FD3179A89EF00ABF9CA /* LeftViewC.m in Sources */ = {isa = PBXBuildFile; fileRef = B50E6FD2179A89EF00ABF9CA /* LeftViewC.m */; };
 		B50E6FD6179A89FF00ABF9CA /* RightViewC.mm in Sources */ = {isa = PBXBuildFile; fileRef = B50E6FD5179A89FE00ABF9CA /* RightViewC.mm */; };
+		B51FDD38179B0C79008FDDE9 /* tennisBall.png in Resources */ = {isa = PBXBuildFile; fileRef = B51FDD32179B0C79008FDDE9 /* tennisBall.png */; };
+		B51FDD39179B0C79008FDDE9 /* football.png in Resources */ = {isa = PBXBuildFile; fileRef = B51FDD33179B0C79008FDDE9 /* football.png */; };
+		B51FDD3A179B0C79008FDDE9 /* pingpong.png in Resources */ = {isa = PBXBuildFile; fileRef = B51FDD34179B0C79008FDDE9 /* pingpong.png */; };
+		B51FDD3B179B0C79008FDDE9 /* badminton.png in Resources */ = {isa = PBXBuildFile; fileRef = B51FDD35179B0C79008FDDE9 /* badminton.png */; };
+		B51FDD3C179B0C79008FDDE9 /* basketball.png in Resources */ = {isa = PBXBuildFile; fileRef = B51FDD36179B0C79008FDDE9 /* basketball.png */; };
+		B51FDD3D179B0C79008FDDE9 /* sendMsg.png in Resources */ = {isa = PBXBuildFile; fileRef = B51FDD37179B0C79008FDDE9 /* sendMsg.png */; };
+		B51FDD42179B0E86008FDDE9 /* LeftTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B51FDD41179B0E86008FDDE9 /* LeftTableViewCell.xib */; };
 		B59C5E5B179ABC7100A952FD /* sportMessage.m in Sources */ = {isa = PBXBuildFile; fileRef = B59C5E5A179ABC7100A952FD /* sportMessage.m */; };
 		B59C5E61179ABC7E00A952FD /* cell.png in Resources */ = {isa = PBXBuildFile; fileRef = B59C5E5C179ABC7E00A952FD /* cell.png */; };
 		B59C5E62179ABC7E00A952FD /* cell@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B59C5E5D179ABC7E00A952FD /* cell@2x.png */; };
@@ -103,12 +110,19 @@
 		B50E6FD2179A89EF00ABF9CA /* LeftViewC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LeftViewC.m; sourceTree = "<group>"; };
 		B50E6FD4179A89FE00ABF9CA /* RightViewC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RightViewC.h; sourceTree = "<group>"; };
 		B50E6FD5179A89FE00ABF9CA /* RightViewC.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = RightViewC.mm; sourceTree = "<group>"; };
+		B51FDD32179B0C79008FDDE9 /* tennisBall.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tennisBall.png; sourceTree = "<group>"; };
+		B51FDD33179B0C79008FDDE9 /* football.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = football.png; sourceTree = "<group>"; };
+		B51FDD34179B0C79008FDDE9 /* pingpong.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pingpong.png; sourceTree = "<group>"; };
+		B51FDD35179B0C79008FDDE9 /* badminton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = badminton.png; sourceTree = "<group>"; };
+		B51FDD36179B0C79008FDDE9 /* basketball.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = basketball.png; sourceTree = "<group>"; };
+		B51FDD37179B0C79008FDDE9 /* sendMsg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sendMsg.png; sourceTree = "<group>"; };
+		B51FDD41179B0E86008FDDE9 /* LeftTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LeftTableViewCell.xib; sourceTree = "<group>"; };
+		B51FDD47179B38C4008FDDE9 /* MsgCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MsgCell.h; sourceTree = "<group>"; };
 		B59C5E59179ABC7100A952FD /* sportMessage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = sportMessage.h; sourceTree = "<group>"; };
 		B59C5E5A179ABC7100A952FD /* sportMessage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = sportMessage.m; sourceTree = "<group>"; };
 		B59C5E5C179ABC7E00A952FD /* cell.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cell.png; sourceTree = "<group>"; };
 		B59C5E5D179ABC7E00A952FD /* cell@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "cell@2x.png"; sourceTree = "<group>"; };
 		B59C5E5E179ABC7E00A952FD /* MsgCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MsgCell.xib; sourceTree = "<group>"; };
-		B59C5E5F179ABC7E00A952FD /* MsgCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MsgCell.h; sourceTree = "<group>"; };
 		B59C5E60179ABC7E00A952FD /* MsgCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MsgCell.m; sourceTree = "<group>"; };
 		B59C5E65179ABCA000A952FD /* OpenUDID.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OpenUDID.h; sourceTree = "<group>"; };
 		B59C5E66179ABCA000A952FD /* OpenUDID.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OpenUDID.m; sourceTree = "<group>"; };
@@ -281,7 +295,8 @@
 				B50E6FD2179A89EF00ABF9CA /* LeftViewC.m */,
 				B50E6FD4179A89FE00ABF9CA /* RightViewC.h */,
 				B50E6FD5179A89FE00ABF9CA /* RightViewC.mm */,
-				B59C5E5F179ABC7E00A952FD /* MsgCell.h */,
+				B51FDD41179B0E86008FDDE9 /* LeftTableViewCell.xib */,
+				B51FDD47179B38C4008FDDE9 /* MsgCell.h */,
 				B59C5E60179ABC7E00A952FD /* MsgCell.m */,
 				B59C5E5E179ABC7E00A952FD /* MsgCell.xib */,
 				04E81AB1179B18B400FC6BA7 /* InputViewController.h */,
@@ -300,6 +315,12 @@
 		B5C2F430179A6D990049B8A8 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				B51FDD32179B0C79008FDDE9 /* tennisBall.png */,
+				B51FDD33179B0C79008FDDE9 /* football.png */,
+				B51FDD34179B0C79008FDDE9 /* pingpong.png */,
+				B51FDD35179B0C79008FDDE9 /* badminton.png */,
+				B51FDD36179B0C79008FDDE9 /* basketball.png */,
+				B51FDD37179B0C79008FDDE9 /* sendMsg.png */,
 				04E81AA2179AFB0100FC6BA7 /* marker@2x.png */,
 				B59C5E5C179ABC7E00A952FD /* cell.png */,
 				B59C5E5D179ABC7E00A952FD /* cell@2x.png */,
@@ -375,6 +396,13 @@
 				B59C5E63179ABC7E00A952FD /* MsgCell.xib in Resources */,
 				04E81A9B179AE2B600FC6BA7 /* SportPointCell.xib in Resources */,
 				04E81AA3179AFB0100FC6BA7 /* marker@2x.png in Resources */,
+				B51FDD38179B0C79008FDDE9 /* tennisBall.png in Resources */,
+				B51FDD39179B0C79008FDDE9 /* football.png in Resources */,
+				B51FDD3A179B0C79008FDDE9 /* pingpong.png in Resources */,
+				B51FDD3B179B0C79008FDDE9 /* badminton.png in Resources */,
+				B51FDD3C179B0C79008FDDE9 /* basketball.png in Resources */,
+				B51FDD3D179B0C79008FDDE9 /* sendMsg.png in Resources */,
+				B51FDD42179B0E86008FDDE9 /* LeftTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
