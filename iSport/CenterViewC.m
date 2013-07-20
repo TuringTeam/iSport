@@ -8,6 +8,8 @@
 
 #import "CenterViewC.h"
 #import "MsgCell.h"
+#import "ListTableView.h"
+
 @interface CenterViewC ()
 
 @end
@@ -16,17 +18,18 @@
 
 - (void)viewDidLoad
 {
-    [super viewDidLoad];
-    self.view.backgroundColor = [UIColor colorWithRed:0.361 green:0.573 blue:0.573 alpha:1.000];
-    _listArray = [NSMutableArray new];
-	_tableView = [[UITableView alloc]initWithFrame:CGRectMake(0,0,
-                                                                self.view.frame.size.width,
-                                                                self.view.frame.size.height)];
-    _tableView.delegate=self;
-    _tableView.dataSource=self;
-    _tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
-    _tableView.backgroundColor=[UIColor clearColor];
-    [self.view addSubview:_tableView];
+  [super viewDidLoad];
+  //self.view.backgroundColor = [UIColor colorWithRed:0.361 green:0.573 blue:0.573 alpha:1.000];
+  _listArray = [NSMutableArray new];
+//	_tableView = [[UITableView alloc]initWithFrame:CGRectMake(0,0,
+//                                                            self.view.frame.size.width,
+//                                                            self.view.frame.size.height)];
+//  
+  self.tableView = [[ListTableView alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+  _tableView.delegate=self;
+  _tableView.dataSource=self;
+  _tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+  [self.view addSubview:_tableView];
 }
 
 #pragma mark -
@@ -34,44 +37,46 @@
 
 /** 返回一共有多少列*/
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return 55;
+  return 55;
 }
 
 /** 行高*/
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    return 72;
+  return 72;
+  
+  
 }
 
 /** 返回一共有几组记录*/
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 1;
+  return 1;
 }
 
 /** 创建TableViewCell*/
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString *identifiy = @"MsgCell";
-    MsgCell *cell= [tableView dequeueReusableCellWithIdentifier:identifiy];
-    
-    if (cell == nil) {
-        cell = [[[NSBundle mainBundle] loadNibNamed:@"MsgCell" owner:self options:nil]  objectAtIndex:0];
-        cell.selectionStyle = UITableViewCellSelectionStyleNone;
-        tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
-    }
-    
-    return cell;
+  static NSString *identifiy = @"MsgCell";
+  MsgCell *cell= [tableView dequeueReusableCellWithIdentifier:identifiy];
+  
+  if (cell == nil) {
+    cell = [[[NSBundle mainBundle] loadNibNamed:@"MsgCell" owner:self options:nil]  objectAtIndex:0];
+    cell.selectionStyle = UITableViewCellSelectionStyleNone;
+    tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+  }
+  
+  return cell;
 }
 
 /** 处理Cell点击*/
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-
+  
 }
 
 - (void)didReceiveMemoryWarning
 {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+  [super didReceiveMemoryWarning];
+  // Dispose of any resources that can be recreated.
 }
 
 @end
