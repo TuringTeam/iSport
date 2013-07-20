@@ -34,7 +34,7 @@
 
 /** 返回一共有多少列*/
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return 1;
+    return 55;
 }
 
 /** 行高*/
@@ -45,7 +45,7 @@
 
 /** 返回一共有几组记录*/
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 55;
+    return 1;
 }
 
 /** 创建TableViewCell*/
