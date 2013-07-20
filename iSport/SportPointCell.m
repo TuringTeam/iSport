@@ -6,26 +6,21 @@
 //  Copyright (c) 2013年 qfpay. All rights reserved.
 //
 
-#import "SportPointCell.h"
-
+#import "SportPointCell.h"  
 @implementation SportPointCell
-
 - (id)initWithFrame:(CGRect)frame
 {
     self = [super initWithFrame:frame];
-    if (self) {
-        // Initialization code
-    }
+    if (self) {  }
     return self;
 }
 
-/*
-// Only override drawRect: if you perform custom drawing.
-// An empty implementation adversely affects performance during animation.
-- (void)drawRect:(CGRect)rect
+- (void)dealloc
 {
-    // Drawing code
+    [_aliasLabel release];
+    [_speedLabel release];
+    [_degreeLabel release];
+    [_nameLabel release];
+    [super dealloc];
 }
-*/
-
 @end
