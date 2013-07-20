@@ -47,7 +47,7 @@
   
   [self.viewController.centerPanel.view custom:[self.navigationController navigationBar]];
   
-  self.viewController.rightGapPercentage = 1;
+  //self.viewController.rightGapPercentage = 0.9;
   self.window.rootViewController = self.viewController;
   self.window.backgroundColor = [UIColor whiteColor];
   [self.window makeKeyAndVisible];

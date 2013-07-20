@@ -12,7 +12,7 @@
 
 - (void)custom:(UINavigationBar *)bar {
     if ([bar respondsToSelector:@selector(setBackgroundImage:forBarMetrics:)]) {
-        [bar setBackgroundImage:[UIImage imageNamed:@"NavigationBar"] forBarMetrics:UIBarMetricsDefault];
+        [bar setBackgroundImage:[UIImage imageNamed:@"headbg"] forBarMetrics:UIBarMetricsDefault];
     } else {
         [bar drawRect:bar.bounds];
     }

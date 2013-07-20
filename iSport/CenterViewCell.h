@@ -10,4 +10,6 @@
 
 @interface CenterViewCell : UITableViewCell
 
+- (void)bindCellObject:(id)object;
+
 @end
