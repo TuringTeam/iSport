@@ -26,7 +26,8 @@
 - (void)viewDidLoad
 {
   [super viewDidLoad];
-  self.view.backgroundColor = [UIColor yellowColor];
+  self.view.backgroundColor = [UIColor colorWithPatternImage:
+                               [UIImage imageNamed:@"BackgroundTextures.png"]];
   
   UIImage *image = [UIImage imageNamed:@"back"];
   UIButton *barButton = [UIButton buttonWithType:UIButtonTypeCustom];
