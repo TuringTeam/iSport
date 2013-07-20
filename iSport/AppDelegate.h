@@ -15,5 +15,4 @@
 
 @property (nonatomic, retain) UIWindow *window;
 @property (nonatomic, retain) JASidePanelController *viewController;
-@property (nonatomic, strong) UINavigationController *navigationController;
 @end

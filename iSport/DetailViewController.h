@@ -10,4 +10,7 @@
 
 @interface DetailViewController : UIViewController
 
+@property (nonatomic, strong) UIImageView *backgroundView;
+@property (nonatomic, strong) UIImageView *avatarView;
+
 @end

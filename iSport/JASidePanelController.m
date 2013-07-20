@@ -951,11 +951,29 @@ static char ja_kvoContext;
 #pragma mark - Public Methods
 
 - (UIBarButtonItem *)leftButtonForCenterPanel {
-  return [[UIBarButtonItem alloc] initWithImage:[[self class] defaultImage] style:UIBarButtonItemStylePlain target:self action:@selector(toggleLeftPanel:)];
+  UIImage *image = [UIImage imageNamed:@"menu"];
+  CGRect frame = CGRectMake(0, 0, 30, 22);
+  UIButton *button = [[UIButton alloc] initWithFrame:frame];
+  [button setBackgroundImage:image forState:UIControlStateNormal];
+  [button addTarget:self action:@selector(toggleLeftPanel:) forControlEvents:UIControlEventTouchUpInside];
+  [button setShowsTouchWhenHighlighted:YES];
+  
+  UIBarButtonItem *buttonItem = [[UIBarButtonItem alloc] initWithCustomView:button];
+  
+  return buttonItem;
 }
 
 - (UIBarButtonItem *)rightButtonForCenterPanl {
-	return [[UIBarButtonItem alloc] initWithImage:[[self class] defaultImage] style:UIBarButtonItemStylePlain target:self action:@selector(toggleRightPanel:)];
+  UIImage *image = [UIImage imageNamed:@"menu"];
+  CGRect frame = CGRectMake(0, 0, 30, 22);
+  UIButton *button = [[UIButton alloc] initWithFrame:frame];
+  [button setBackgroundImage:image forState:UIControlStateNormal];
+  [button addTarget:self action:@selector(toggleRightPanel:) forControlEvents:UIControlEventTouchUpInside];
+  [button setShowsTouchWhenHighlighted:YES];
+  
+  UIBarButtonItem *buttonItem = [[UIBarButtonItem alloc] initWithCustomView:button];
+  
+  return buttonItem;
 }
 
 - (void)showLeftPanel:(BOOL)animated {

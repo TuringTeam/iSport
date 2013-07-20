@@ -10,6 +10,7 @@
 #import "MsgCell.h"
 #import "CenterViewCell.h"
 #import "ListTableView.h"
+#import "DetailViewController.h"
 
 @interface CenterViewC ()
 
@@ -26,11 +27,12 @@
   for (NSInteger i = 0; i < 30; i++) {
     sportMessage *sport = [[sportMessage alloc] init];
     sport.ID = [NSString stringWithFormat:@"ID%d",i];
-    sport.message = [NSString stringWithFormat:@"Message %d",i];
+    sport.message = [NSString stringWithFormat:@"清华大学校篮球社，假期没事，组团打篮球，有一起的的么？篮球已有还缺五人!"];
     sport.pubTimeStr = [NSString stringWithFormat:@"%d分钟前",i+1];
     sport.endTimeDataStr = [NSString stringWithFormat:@"%d小时后",i+1];
-    sport.address = [NSString stringWithFormat:@"体育场"];
+    sport.address = [NSString stringWithFormat:@"1000m"];
     sport.remarks = [NSString stringWithFormat:@"remarks%d",i];
+    sport.ballType = kBasketball;
     [self.listArray addObject:sport];
   }
   
@@ -90,7 +92,8 @@
 
 /** 处理Cell点击*/
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-  
+  DetailViewController *detailVC = [[DetailViewController alloc] initWithNibName:nil bundle:nil];
+  [self.navigationController pushViewController:detailVC animated:YES];
 }
 
 - (void)didReceiveMemoryWarning
