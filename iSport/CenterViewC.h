@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface CenterViewC : UIViewController
-
+@interface CenterViewC : UIViewController<UITableViewDataSource,UITableViewDelegate>
+@property(nonatomic,retain) NSMutableArray *listArray;
+@property(nonatomic,retain) UITableView *tableView;
 @end

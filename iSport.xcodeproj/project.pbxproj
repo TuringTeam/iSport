@@ -7,11 +7,18 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		B50E6FC5179A88A900ABF9CA /* JASidePanelController.m in Sources */ = {isa = PBXBuildFile; fileRef = B50E6FC2179A88A900ABF9CA /* JASidePanelController.m */; };
+		B50E6FC5179A88A900ABF9CA /* JASidePanelController.m in Sources */ = {isa = PBXBuildFile; fileRef = B50E6FC2179A88A900ABF9CA /* JASidePanelController.m */; settings = {COMPILER_FLAGS = " -fobjc-arc"; }; };
 		B50E6FC6179A88A900ABF9CA /* UIViewController+JASidePanel.m in Sources */ = {isa = PBXBuildFile; fileRef = B50E6FC4179A88A900ABF9CA /* UIViewController+JASidePanel.m */; };
 		B50E6FD0179A89E300ABF9CA /* CenterViewC.m in Sources */ = {isa = PBXBuildFile; fileRef = B50E6FCF179A89E300ABF9CA /* CenterViewC.m */; };
 		B50E6FD3179A89EF00ABF9CA /* LeftViewC.m in Sources */ = {isa = PBXBuildFile; fileRef = B50E6FD2179A89EF00ABF9CA /* LeftViewC.m */; };
 		B50E6FD6179A89FF00ABF9CA /* RightViewC.m in Sources */ = {isa = PBXBuildFile; fileRef = B50E6FD5179A89FE00ABF9CA /* RightViewC.m */; };
+		B50E6FD8179A919C00ABF9CA /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B50E6FD7179A919C00ABF9CA /* QuartzCore.framework */; };
+		B50E6FDB179A9DD400ABF9CA /* sportMessage.m in Sources */ = {isa = PBXBuildFile; fileRef = B50E6FDA179A9DD300ABF9CA /* sportMessage.m */; };
+		B50E6FE0179AA16600ABF9CA /* OpenUDID.m in Sources */ = {isa = PBXBuildFile; fileRef = B50E6FDF179AA16600ABF9CA /* OpenUDID.m */; };
+		B50E6FE6179AA1F100ABF9CA /* MsgCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B50E6FE5179AA1F100ABF9CA /* MsgCell.m */; };
+		B50E6FE8179AA1FE00ABF9CA /* MsgCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B50E6FE7179AA1FE00ABF9CA /* MsgCell.xib */; };
+		B50E6FED179AA91100ABF9CA /* cell.png in Resources */ = {isa = PBXBuildFile; fileRef = B50E6FEB179AA91100ABF9CA /* cell.png */; };
+		B50E6FEE179AA91100ABF9CA /* cell@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B50E6FEC179AA91100ABF9CA /* cell@2x.png */; };
 		B5C2F42A179A6D990049B8A8 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5C2F429179A6D990049B8A8 /* UIKit.framework */; };
 		B5C2F42C179A6D990049B8A8 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5C2F42B179A6D990049B8A8 /* Foundation.framework */; };
 		B5C2F42E179A6D990049B8A8 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5C2F42D179A6D990049B8A8 /* CoreGraphics.framework */; };
@@ -34,6 +41,16 @@
 		B50E6FD2179A89EF00ABF9CA /* LeftViewC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LeftViewC.m; sourceTree = "<group>"; };
 		B50E6FD4179A89FE00ABF9CA /* RightViewC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RightViewC.h; sourceTree = "<group>"; };
 		B50E6FD5179A89FE00ABF9CA /* RightViewC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RightViewC.m; sourceTree = "<group>"; };
+		B50E6FD7179A919C00ABF9CA /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		B50E6FD9179A9DD300ABF9CA /* sportMessage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = sportMessage.h; sourceTree = "<group>"; };
+		B50E6FDA179A9DD300ABF9CA /* sportMessage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = sportMessage.m; sourceTree = "<group>"; };
+		B50E6FDE179AA16600ABF9CA /* OpenUDID.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OpenUDID.h; sourceTree = "<group>"; };
+		B50E6FDF179AA16600ABF9CA /* OpenUDID.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OpenUDID.m; sourceTree = "<group>"; };
+		B50E6FE4179AA1F100ABF9CA /* MsgCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MsgCell.h; sourceTree = "<group>"; };
+		B50E6FE5179AA1F100ABF9CA /* MsgCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MsgCell.m; sourceTree = "<group>"; };
+		B50E6FE7179AA1FE00ABF9CA /* MsgCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MsgCell.xib; sourceTree = "<group>"; };
+		B50E6FEB179AA91100ABF9CA /* cell.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cell.png; sourceTree = "<group>"; };
+		B50E6FEC179AA91100ABF9CA /* cell@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "cell@2x.png"; sourceTree = "<group>"; };
 		B5C2F426179A6D990049B8A8 /* iSport.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iSport.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B5C2F429179A6D990049B8A8 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		B5C2F42B179A6D990049B8A8 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -54,9 +71,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B5C2F42E179A6D990049B8A8 /* CoreGraphics.framework in Frameworks */,
+				B50E6FD8179A919C00ABF9CA /* QuartzCore.framework in Frameworks */,
 				B5C2F42A179A6D990049B8A8 /* UIKit.framework in Frameworks */,
 				B5C2F42C179A6D990049B8A8 /* Foundation.framework in Frameworks */,
-				B5C2F42E179A6D990049B8A8 /* CoreGraphics.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -72,6 +90,24 @@
 				B50E6FC4179A88A900ABF9CA /* UIViewController+JASidePanel.m */,
 			);
 			name = JASidePanel;
+			sourceTree = "<group>";
+		};
+		B50E6FDC179AA12600ABF9CA /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				B50E6FD9179A9DD300ABF9CA /* sportMessage.h */,
+				B50E6FDA179A9DD300ABF9CA /* sportMessage.m */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		B50E6FDD179AA13800ABF9CA /* Utility */ = {
+			isa = PBXGroup;
+			children = (
+				B50E6FDE179AA16600ABF9CA /* OpenUDID.h */,
+				B50E6FDF179AA16600ABF9CA /* OpenUDID.m */,
+			);
+			name = Utility;
 			sourceTree = "<group>";
 		};
 		B5C2F41D179A6D990049B8A8 = {
@@ -94,6 +130,7 @@
 		B5C2F428179A6D990049B8A8 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				B50E6FD7179A919C00ABF9CA /* QuartzCore.framework */,
 				B5C2F429179A6D990049B8A8 /* UIKit.framework */,
 				B5C2F42B179A6D990049B8A8 /* Foundation.framework */,
 				B5C2F42D179A6D990049B8A8 /* CoreGraphics.framework */,
@@ -112,6 +149,11 @@
 				B50E6FD2179A89EF00ABF9CA /* LeftViewC.m */,
 				B50E6FD4179A89FE00ABF9CA /* RightViewC.h */,
 				B50E6FD5179A89FE00ABF9CA /* RightViewC.m */,
+				B50E6FE4179AA1F100ABF9CA /* MsgCell.h */,
+				B50E6FE5179AA1F100ABF9CA /* MsgCell.m */,
+				B50E6FE7179AA1FE00ABF9CA /* MsgCell.xib */,
+				B50E6FDC179AA12600ABF9CA /* Model */,
+				B50E6FDD179AA13800ABF9CA /* Utility */,
 				B50E6FC7179A88C200ABF9CA /* JASidePanel */,
 				B5C2F430179A6D990049B8A8 /* Supporting Files */,
 			);
@@ -121,6 +163,8 @@
 		B5C2F430179A6D990049B8A8 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				B50E6FEB179AA91100ABF9CA /* cell.png */,
+				B50E6FEC179AA91100ABF9CA /* cell@2x.png */,
 				B5C2F431179A6D990049B8A8 /* iSport-Info.plist */,
 				B5C2F432179A6D990049B8A8 /* InfoPlist.strings */,
 				B5C2F435179A6D990049B8A8 /* main.m */,
@@ -187,6 +231,9 @@
 				B5C2F43C179A6D990049B8A8 /* Default.png in Resources */,
 				B5C2F43E179A6D990049B8A8 /* Default@2x.png in Resources */,
 				B5C2F440179A6D990049B8A8 /* Default-568h@2x.png in Resources */,
+				B50E6FE8179AA1FE00ABF9CA /* MsgCell.xib in Resources */,
+				B50E6FED179AA91100ABF9CA /* cell.png in Resources */,
+				B50E6FEE179AA91100ABF9CA /* cell@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -204,6 +251,9 @@
 				B50E6FD0179A89E300ABF9CA /* CenterViewC.m in Sources */,
 				B50E6FD3179A89EF00ABF9CA /* LeftViewC.m in Sources */,
 				B50E6FD6179A89FF00ABF9CA /* RightViewC.m in Sources */,
+				B50E6FDB179A9DD400ABF9CA /* sportMessage.m in Sources */,
+				B50E6FE0179AA16600ABF9CA /* OpenUDID.m in Sources */,
+				B50E6FE6179AA1F100ABF9CA /* MsgCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

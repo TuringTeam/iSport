@@ -7,7 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import "JASidePanelController.h"
+#import "UIViewController+JASidePanel.h"
+#import "RightViewC.h"
+#import "CenterViewC.h"
 @interface LeftViewC : UIViewController
 
 @end
