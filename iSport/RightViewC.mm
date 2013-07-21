@@ -11,7 +11,7 @@
 #import "CalloutMapAnnotation.h"
 #import "CustomPointAnnotation.h"
 #import "CallOutAnnotationView.h"
-
+#import "sportMessage.h"
 @interface RightViewC (){
     CalloutMapAnnotation *_calloutMapAnnotation;
 }
@@ -19,6 +19,7 @@
 
 @implementation RightViewC
 @synthesize mapView = _mapView;
+@synthesize sportMsg;
 @synthesize annotations;
 @synthesize theAnnotation;
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -48,29 +49,47 @@
     [_mapView setShowsUserLocation:YES];
     _mapView.delegate = self;
     self.view = _mapView;
-    
+    sportMsg =[[NSMutableArray arrayWithArray: [ListData allListData]]copy];
     // 添加PointAnnotations
-    //for (sportMessage* sMsg in annotations) {
-        //if (theAnnotation == nil) {
+    for (sportMessage* sport in sportMsg) {
             
             //添加自定义Annotation
-            CLLocationCoordinate2D center = {39.91669,116.39716};
+            CLLocationCoordinate2D center = {sport.latitude,sport.longitude};
             
             CustomPointAnnotation *pointAnnotation = [[CustomPointAnnotation alloc] init];
-            //    pointAnnotation.title = @"我是中国人";//因为继承了BMKPointAnnotation，所以这些title,subtitle都可以设置
-            //    pointAnnotation.subtitle = @"我爱自己的祖国";
-            
-            NSDictionary *dict = [NSDictionary dictionaryWithObjectsAndKeys:@"拍照",@"alias",@"速度",@"speed",@"方位",@"degree",@"位置",@"name",nil];
+        NSString *type = nil;
+        switch (sport.ballType) {
+            case kBasketball:
+                type = [NSString stringWithFormat:@"basketball"];
+                break;
+            case kFootball:
+                type = [NSString stringWithFormat:@"football"];;
+                break;
+            case kBadminton:
+                type = [NSString stringWithFormat:@"badminton"];;
+                break;
+            case kTennisBall:
+               type = [NSString stringWithFormat:@"tennisball"];;
+                break;
+            case kPingpong:
+                type = [NSString stringWithFormat:@"pingpong"];;
+                break;
+            default:
+                break;
+        }
+
+        
+            NSDictionary *dict = [NSDictionary dictionaryWithObjectsAndKeys:[NSString stringWithFormat:@"%@",sport.message],@"消息",[NSString stringWithFormat:@"%@",sport.endTimeDate],@"结束时间",type,@"类型", nil];
             pointAnnotation.pointCalloutInfo =dict;
             
             pointAnnotation.coordinate = center;
             [_mapView addAnnotation:pointAnnotation];
             [pointAnnotation release];
             
-            BMKCoordinateSpan span = {0.04,0.03};
-            BMKCoordinateRegion region = {center,span};
-            [_mapView setRegion:region animated:NO];      //  }
-   // }
+//            BMKCoordinateSpan span = {0.06,0.03};
+//            BMKCoordinateRegion region = {center,span};
+//            [_mapView setRegion:region animated:NO];      //  }
+   }
 	// Do any additional setup after loading the view.
 }
 
@@ -121,11 +140,12 @@
         
         //开始设置添加marker时的赋值
         //calloutannotationview.sportInfoView.aliasLabel.text = [ann.locationInfo objectForKey:@"alias"];
-        //calloutannotationview.sportInfoView.speedLabel.text = [ann.locationInfo objectForKey:@"speed"];
+        calloutannotationview.sportInfoView.speedLabel.text = @"2013-7-21 上午10:22:10";
         //calloutannotationview.sportInfoView.degreeLabel.text =[ann.locationInfo objectForKey:@"degree"];
-        //calloutannotationview.sportInfoView.nameLabel.text =  [ann.locationInfo objectForKey:@"name"];
-        
+        calloutannotationview.sportInfoView.nameLabel.text =  @"晚上打球,求组队!";
+        calloutannotationview.sportInfoView.image = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"basketball"]];
         return calloutannotationview;
+        
         
     }
     
@@ -178,17 +198,17 @@
     }
 }
 
--(void)mapView:(BMKMapView *)mapView didDeselectAnnotationView:(BMKAnnotationView *)view{
-    
-    if (_calloutMapAnnotation&&![view isKindOfClass:[CallOutAnnotationView class]]) {
-        
-        if (_calloutMapAnnotation.coordinate.latitude == view.annotation.coordinate.latitude&&
-            _calloutMapAnnotation.coordinate.longitude == view.annotation.coordinate.longitude) {
-            [mapView removeAnnotation:_calloutMapAnnotation];
-            _calloutMapAnnotation = nil;
-        }
-    }
-}
+//-(void)mapView:(BMKMapView *)mapView didDeselectAnnotationView:(BMKAnnotationView *)view{
+//    
+//    if (_calloutMapAnnotation&&![view isKindOfClass:[CallOutAnnotationView class]]) {
+//        
+//        if (_calloutMapAnnotation.coordinate.latitude == view.annotation.coordinate.latitude&&
+//            _calloutMapAnnotation.coordinate.longitude == view.annotation.coordinate.longitude) {
+//            [mapView removeAnnotation:_calloutMapAnnotation];
+//            _calloutMapAnnotation = nil;
+//        }
+//    }
+//}
 
 
 @end

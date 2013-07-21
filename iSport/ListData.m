@@ -28,7 +28,7 @@
         sportMsg.ballType = [[obj objectForKey:@"kBallType"]intValue];
         [allData addObject:sportMsg];
     }];
-    [allData release];
+    
     return allData;
 }
 

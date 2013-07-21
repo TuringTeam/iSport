@@ -27,7 +27,7 @@
 {
     [super viewDidLoad];
     [self.infoTextView becomeFirstResponder];
-    
+
     //YOU CAN ALSO ASSIGN THE DATA SOURCE AND THE DELEGATE IN CODE (IT'S ALREADY DONE IN NIB, BUT DO AS YOU PREFER)
     self.timeLimieView.dataSource = self;
     self.timeLimieView.delegate = self;
@@ -55,7 +55,7 @@
 
 - (IBAction)isCharges:(id)sender{
 
-
+    [self dismissModalViewControllerAnimated:YES];
 }
 
 #pragma IZValueSelector dataSource
@@ -83,7 +83,7 @@
 - (UIView *)selector:(IZValueSelectorView *)valueSelector viewForRowAtIndex:(NSInteger)index {
     UILabel * label = nil;
     if (valueSelector.tag == 0010) {
-        label = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 50, 30)];
+        label = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 45, 30)];
         switch (index) {
             case 0:
                 label.text = [NSString stringWithFormat:@"1小时"];
@@ -158,6 +158,7 @@
     [_timeLimieView release];
     [_isChargesBtn release];
     [_infoTextView release];
+    [_backBtn release];
     [super dealloc];
 }
 - (void)viewDidUnload {
@@ -165,6 +166,7 @@
     [self setTimeLimieView:nil];
     [self setIsChargesBtn:nil];
     [self setInfoTextView:nil];
+    [self setBackBtn:nil];
     [super viewDidUnload];
 }
 @end
