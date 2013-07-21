@@ -140,7 +140,7 @@
       [self.sportImage setImage:[UIImage imageNamed:@"markbadminton"]];
       break;
       case kTennisBall:
-      [self.sportImage setImage:[UIImage imageNamed:@"marktinnisball"]];
+      [self.sportImage setImage:[UIImage imageNamed:@"marktennisball"]];
       break;
       case kPingpong:
       [self.sportImage setImage:[UIImage imageNamed:@"markpingpang"]];
