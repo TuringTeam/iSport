@@ -24,20 +24,9 @@
 {
   [super viewDidLoad];
   
-  //self.listArray = [NSMutableArray new];
-  
-//    for (NSInteger i = 0; i < 30; i++) {
-//      sportMessage *sport = [[sportMessage alloc] init];
-//      sport.ID = [NSString stringWithFormat:@"ID%d",i];
-//      sport.message = [NSString stringWithFormat:@"清华大学校篮球社，假期没事，组团打篮球，有一起的的么？篮球已有还缺五人!"];
-//      sport.pubTimeStr = [NSString stringWithFormat:@"%d分钟前",i+1];
-//      sport.endTimeDataStr = [NSString stringWithFormat:@"%d小时后",i+1];
-//      sport.ballType = kBasketball;
-//      [self.listArray addObject:sport];
-//    }
-  
+  [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(updateData:) name:@"updateData" object:nil];
+    
   self.listArray = [ListData allListData];
-  NSLog(@"%@",self.listArray);
   self.tableView = [[ListTableView alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
   
   _tableView.delegate=self;
@@ -55,7 +44,6 @@
 		
 	}
 	
-	//  update the last update date
 	[_refreshHeaderView refreshLastUpdatedDate];
 
 }
@@ -67,6 +55,12 @@
     _navigationBarTitle = [navigationBarTitle copy];
   }
   self.title = _navigationBarTitle;
+}
+
+-(void)updateData:(NSNotification*)notification{
+    NSMutableArray *array = [notification object];
+    _listArray = [array copy];
+    [self.tableView reloadData];
 }
 
 -(NSString *)getDate
@@ -170,8 +164,6 @@
 
 - (void)reloadTableViewDataSource{
 	
-	//  should be calling your tableviews data source model to reload
-	//  put here just for demo
 	_reloading = YES;
 	
 }
@@ -179,8 +171,10 @@
 - (void)doneLoadingTableViewData{
 	
 	//  model should call this when its done loading
+    self.listArray = [ListData allListData];
 	_reloading = NO;
 	[_refreshHeaderView egoRefreshScrollViewDataSourceDidFinishedLoading:self.tableView];
+    [self.tableView reloadData];
 	
 }
 

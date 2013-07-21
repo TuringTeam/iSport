@@ -28,7 +28,6 @@
 		B51FDD83179BA685008FDDE9 /* ListData.m in Sources */ = {isa = PBXBuildFile; fileRef = B51FDD82179BA685008FDDE9 /* ListData.m */; };
 		B51FDD85179BA68E008FDDE9 /* ModelTest.plist in Resources */ = {isa = PBXBuildFile; fileRef = B51FDD84179BA68E008FDDE9 /* ModelTest.plist */; };
 		B51FDD97179BA6E5008FDDE9 /* P1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B51FDD87179BA6E5008FDDE9 /* P1.jpg */; };
-		B51FDD98179BA6E5008FDDE9 /* P2.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = B51FDD88179BA6E5008FDDE9 /* P2.jpeg */; };
 		B51FDD99179BA6E5008FDDE9 /* P3.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B51FDD89179BA6E5008FDDE9 /* P3.jpg */; };
 		B51FDD9A179BA6E5008FDDE9 /* P4.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B51FDD8A179BA6E5008FDDE9 /* P4.jpg */; };
 		B51FDD9B179BA6E5008FDDE9 /* P5.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B51FDD8B179BA6E5008FDDE9 /* P5.jpg */; };
@@ -50,6 +49,7 @@
 		B51FDDB4179BA7E5008FDDE9 /* sr_refresh@2X.png in Resources */ = {isa = PBXBuildFile; fileRef = B51FDDB2179BA7E5008FDDE9 /* sr_refresh@2X.png */; };
 		B51FDDB8179BAB80008FDDE9 /* InputVC.m in Sources */ = {isa = PBXBuildFile; fileRef = B51FDDB6179BAB80008FDDE9 /* InputVC.m */; };
 		B51FDDB9179BAB80008FDDE9 /* InputVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = B51FDDB7179BAB80008FDDE9 /* InputVC.xib */; };
+		B51FDDBB179BB582008FDDE9 /* P2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B51FDDBA179BB582008FDDE9 /* P2.jpg */; };
 		B59C5E5B179ABC7100A952FD /* sportMessage.m in Sources */ = {isa = PBXBuildFile; fileRef = B59C5E5A179ABC7100A952FD /* sportMessage.m */; };
 		B59C5E67179ABCA000A952FD /* OpenUDID.m in Sources */ = {isa = PBXBuildFile; fileRef = B59C5E66179ABCA000A952FD /* OpenUDID.m */; };
 		B5C2F42A179A6D990049B8A8 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5C2F429179A6D990049B8A8 /* UIKit.framework */; };
@@ -197,6 +197,7 @@
 		B51FDDB5179BAB80008FDDE9 /* InputVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InputVC.h; sourceTree = "<group>"; };
 		B51FDDB6179BAB80008FDDE9 /* InputVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InputVC.m; sourceTree = "<group>"; };
 		B51FDDB7179BAB80008FDDE9 /* InputVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = InputVC.xib; sourceTree = "<group>"; };
+		B51FDDBA179BB582008FDDE9 /* P2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = P2.jpg; path = iSport/P2.jpg; sourceTree = "<group>"; };
 		B59C5E59179ABC7100A952FD /* sportMessage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = sportMessage.h; sourceTree = "<group>"; };
 		B59C5E5A179ABC7100A952FD /* sportMessage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = sportMessage.m; sourceTree = "<group>"; };
 		B59C5E65179ABCA000A952FD /* OpenUDID.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OpenUDID.h; sourceTree = "<group>"; };
@@ -471,6 +472,7 @@
 		B5C2F41D179A6D990049B8A8 = {
 			isa = PBXGroup;
 			children = (
+				B51FDDBA179BB582008FDDE9 /* P2.jpg */,
 				B5C2F42F179A6D990049B8A8 /* iSport */,
 				B5C2F428179A6D990049B8A8 /* Frameworks */,
 				B5C2F427179A6D990049B8A8 /* Products */,
@@ -721,6 +723,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B51FDDBB179BB582008FDDE9 /* P2.jpg in Resources */,
 				B5C2F434179A6D990049B8A8 /* InfoPlist.strings in Resources */,
 				04E81A84179A8EA800FC6BA7 /* mapapi.bundle in Resources */,
 				04E81A9B179AE2B600FC6BA7 /* SportPointCell.xib in Resources */,
@@ -759,7 +762,6 @@
 				CAB15907179B522800B522EE /* HeaderViewTopbg@2x.png in Resources */,
 				B51FDD85179BA68E008FDDE9 /* ModelTest.plist in Resources */,
 				B51FDD97179BA6E5008FDDE9 /* P1.jpg in Resources */,
-				B51FDD98179BA6E5008FDDE9 /* P2.jpeg in Resources */,
 				B51FDD99179BA6E5008FDDE9 /* P3.jpg in Resources */,
 				B51FDD9A179BA6E5008FDDE9 /* P4.jpg in Resources */,
 				B51FDD9B179BA6E5008FDDE9 /* P5.jpg in Resources */,
