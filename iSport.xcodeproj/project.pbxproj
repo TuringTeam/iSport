@@ -25,6 +25,7 @@
 		B50E6FD3179A89EF00ABF9CA /* LeftViewC.m in Sources */ = {isa = PBXBuildFile; fileRef = B50E6FD2179A89EF00ABF9CA /* LeftViewC.m */; };
 		B50E6FD6179A89FF00ABF9CA /* RightViewC.mm in Sources */ = {isa = PBXBuildFile; fileRef = B50E6FD5179A89FE00ABF9CA /* RightViewC.mm */; };
 		B51FDD42179B0E86008FDDE9 /* LeftTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B51FDD41179B0E86008FDDE9 /* LeftTableViewCell.xib */; };
+		B51FDD49179B663C008FDDE9 /* football.png in Resources */ = {isa = PBXBuildFile; fileRef = B51FDD48179B663C008FDDE9 /* football.png */; };
 		B59C5E5B179ABC7100A952FD /* sportMessage.m in Sources */ = {isa = PBXBuildFile; fileRef = B59C5E5A179ABC7100A952FD /* sportMessage.m */; };
 		B59C5E67179ABCA000A952FD /* OpenUDID.m in Sources */ = {isa = PBXBuildFile; fileRef = B59C5E66179ABCA000A952FD /* OpenUDID.m */; };
 		B5C2F42A179A6D990049B8A8 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5C2F429179A6D990049B8A8 /* UIKit.framework */; };
@@ -56,7 +57,6 @@
 		CAB158E4179B456F00B522EE /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CAB158CA179B456F00B522EE /* Default-568h@2x.png */; };
 		CAB158E5179B456F00B522EE /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = CAB158CB179B456F00B522EE /* Default.png */; };
 		CAB158E6179B456F00B522EE /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CAB158CC179B456F00B522EE /* Default@2x.png */; };
-		CAB158E7179B456F00B522EE /* football.png in Resources */ = {isa = PBXBuildFile; fileRef = CAB158CD179B456F00B522EE /* football.png */; };
 		CAB158E8179B456F00B522EE /* headbg.png in Resources */ = {isa = PBXBuildFile; fileRef = CAB158CE179B456F00B522EE /* headbg.png */; };
 		CAB158E9179B456F00B522EE /* headbg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CAB158CF179B456F00B522EE /* headbg@2x.png */; };
 		CAB158EA179B456F00B522EE /* marker@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CAB158D0179B456F00B522EE /* marker@2x.png */; };
@@ -137,6 +137,7 @@
 		B50E6FD4179A89FE00ABF9CA /* RightViewC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RightViewC.h; sourceTree = "<group>"; };
 		B50E6FD5179A89FE00ABF9CA /* RightViewC.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = RightViewC.mm; sourceTree = "<group>"; };
 		B51FDD41179B0E86008FDDE9 /* LeftTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LeftTableViewCell.xib; sourceTree = "<group>"; };
+		B51FDD48179B663C008FDDE9 /* football.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = football.png; sourceTree = "<group>"; };
 		B59C5E59179ABC7100A952FD /* sportMessage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = sportMessage.h; sourceTree = "<group>"; };
 		B59C5E5A179ABC7100A952FD /* sportMessage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = sportMessage.m; sourceTree = "<group>"; };
 		B59C5E65179ABCA000A952FD /* OpenUDID.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OpenUDID.h; sourceTree = "<group>"; };
@@ -214,7 +215,6 @@
 		CAB158CA179B456F00B522EE /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		CAB158CB179B456F00B522EE /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		CAB158CC179B456F00B522EE /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
-		CAB158CD179B456F00B522EE /* football.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = football.png; sourceTree = "<group>"; };
 		CAB158CE179B456F00B522EE /* headbg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = headbg.png; sourceTree = "<group>"; };
 		CAB158CF179B456F00B522EE /* headbg@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "headbg@2x.png"; sourceTree = "<group>"; };
 		CAB158D0179B456F00B522EE /* marker@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "marker@2x.png"; sourceTree = "<group>"; };
@@ -401,9 +401,9 @@
 				B50E6FCF179A89E300ABF9CA /* CenterViewC.m */,
 				B50E6FD1179A89EF00ABF9CA /* LeftViewC.h */,
 				B50E6FD2179A89EF00ABF9CA /* LeftViewC.m */,
+				B51FDD41179B0E86008FDDE9 /* LeftTableViewCell.xib */,
 				B50E6FD4179A89FE00ABF9CA /* RightViewC.h */,
 				B50E6FD5179A89FE00ABF9CA /* RightViewC.mm */,
-				B51FDD41179B0E86008FDDE9 /* LeftTableViewCell.xib */,
 				04E81AB1179B18B400FC6BA7 /* InputViewController.h */,
 				04E81AAF179B18B400FC6BA7 /* InputViewController.m */,
 				04E81AB0179B18B400FC6BA7 /* InputView.xib */,
@@ -539,10 +539,10 @@
 		CAB15900179B47F900B522EE /* LeftviewImage */ = {
 			isa = PBXGroup;
 			children = (
+				B51FDD48179B663C008FDDE9 /* football.png */,
 				CAB15901179B4DF500B522EE /* tennis.png */,
 				CAB158C6179B456F00B522EE /* badminton.png */,
 				CAB158C7179B456F00B522EE /* basketball.png */,
-				CAB158CD179B456F00B522EE /* football.png */,
 				CAB158D7179B456F00B522EE /* pingpong.png */,
 				CAB158D8179B456F00B522EE /* sendMsg.png */,
 				CAB158DA179B456F00B522EE /* test.png */,
@@ -617,7 +617,6 @@
 				CAB158E4179B456F00B522EE /* Default-568h@2x.png in Resources */,
 				CAB158E5179B456F00B522EE /* Default.png in Resources */,
 				CAB158E6179B456F00B522EE /* Default@2x.png in Resources */,
-				CAB158E7179B456F00B522EE /* football.png in Resources */,
 				CAB158E8179B456F00B522EE /* headbg.png in Resources */,
 				CAB158E9179B456F00B522EE /* headbg@2x.png in Resources */,
 				CAB158EA179B456F00B522EE /* marker@2x.png in Resources */,
@@ -635,6 +634,7 @@
 				CAB158FE179B470900B522EE /* markpingpang.png in Resources */,
 				CAB158FF179B470900B522EE /* marktennisball.png in Resources */,
 				CAB15902179B4DF500B522EE /* tennis.png in Resources */,
+				B51FDD49179B663C008FDDE9 /* football.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -744,8 +744,8 @@
 		B5C2F444179A6D990049B8A8 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "iPhone Developer: Hang Li (B4WB78DCEG)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Hang Li (B4WB78DCEG)";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Hangzhou Zheng (H4U5Z34JQ5)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Hangzhou Zheng (H4U5Z34JQ5)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "iSport/iSport-Prefix.pch";
 				INFOPLIST_FILE = "iSport/iSport-Info.plist";
@@ -755,8 +755,8 @@
 					"\"$(SRCROOT)/iSport\"",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "72E76468-5FD0-4859-A66A-3C404D67FEEE";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "72E76468-5FD0-4859-A66A-3C404D67FEEE";
+				PROVISIONING_PROFILE = "D49E8444-7E16-425C-BE6B-A143FF6634EE";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "D49E8444-7E16-425C-BE6B-A143FF6634EE";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -764,8 +764,8 @@
 		B5C2F445179A6D990049B8A8 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "iPhone Developer: Hang Li (B4WB78DCEG)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Hang Li (B4WB78DCEG)";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Hangzhou Zheng (H4U5Z34JQ5)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Hangzhou Zheng (H4U5Z34JQ5)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "iSport/iSport-Prefix.pch";
 				INFOPLIST_FILE = "iSport/iSport-Info.plist";
@@ -775,8 +775,8 @@
 					"\"$(SRCROOT)/iSport\"",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "72E76468-5FD0-4859-A66A-3C404D67FEEE";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "72E76468-5FD0-4859-A66A-3C404D67FEEE";
+				PROVISIONING_PROFILE = "D49E8444-7E16-425C-BE6B-A143FF6634EE";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "D49E8444-7E16-425C-BE6B-A143FF6634EE";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

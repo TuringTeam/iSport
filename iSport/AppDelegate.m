@@ -26,7 +26,6 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     self.window = [[[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]] autorelease];
-    
     _mapManager = [[BMKMapManager alloc]init];
     // 如果要关注网络及授权验证事件，请设定     generalDelegate参数
     BOOL ret = [_mapManager start:@"CE7C2024B66924A774B80A7A4836E3E0607C5049"  generalDelegate:nil];
@@ -42,12 +41,10 @@
   
   MLNavigationController *navCtrl = [[[MLNavigationController alloc]initWithRootViewController:[CenterViewC new]]autorelease];
   self.viewController.centerPanel = navCtrl;
-  
-    //self.viewController.centerPanel = [[UINavigationController alloc]initWithRootViewController:[CenterViewC new]];
   [self.viewController.centerPanel.view custom:[navCtrl navigationBar]];
-  
+
     self.window.rootViewController = self.viewController;
-    self.window.backgroundColor = [UIColor whiteColor];
+    self.window.backgroundColor = [UIColor clearColor];
     [self.window makeKeyAndVisible];
     return YES;
 }
