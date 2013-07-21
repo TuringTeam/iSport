@@ -14,7 +14,7 @@
 #import "JASidePanelController.h"
 #import "MLNavigationController.h"
 #import "UIView+customBackground.h"
-
+#import "ListData.h"
 @implementation AppDelegate
 
 - (void)dealloc
@@ -32,6 +32,10 @@
     if (!ret) {
         NSLog(@"manager start failed!");
     }
+    
+    NSMutableArray *array = [ListData sortListData:3];
+    
+    NSLog(@"%@",[array description]);
     
     self.viewController = [JASidePanelController new];
     self.viewController.shouldDelegateAutorotateToVisiblePanel = NO;
