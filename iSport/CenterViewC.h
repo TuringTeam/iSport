@@ -7,8 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "sportMessage.h"
 
 @interface CenterViewC : UIViewController<UITableViewDataSource,UITableViewDelegate>
+
 @property(nonatomic,retain) NSMutableArray *listArray;
 @property(nonatomic,retain) UITableView *tableView;
+@property (nonatomic, strong) sportMessage *sport;
+
 @end
