@@ -14,4 +14,6 @@
 
 - (void)bindCellObject:(id)object;
 
+- (void)setDistanceLabelText:(NSString *)text;
+
 @end
