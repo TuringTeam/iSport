@@ -11,4 +11,5 @@
 @implementation CustomPointAnnotation
 
 @synthesize pointCalloutInfo;
+
 @end
