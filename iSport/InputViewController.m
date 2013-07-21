@@ -52,7 +52,12 @@
 
 #pragma IZValueSelector dataSource
 - (NSInteger)numberOfRowsInSelector:(IZValueSelectorView *)valueSelector {
-    return 30;
+    if (valueSelector.tag == 0010) {
+        return 6;
+    }
+    else {
+        return 5;
+    }
 }
 
 
@@ -71,11 +76,50 @@
     UILabel * label = nil;
     if (valueSelector.tag == 0010) {
         label = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 30, self.selectorTimeLimiteV.frame.size.height)];
+        switch (index.numberOfRowsInSelector) {
+            case 0:
+                label.text = [NSString stringWithFormat:@"1小时"];
+                break;
+            case 1:
+                label.text = [NSString stringWithFormat:@"3小时"];
+                break;
+            case 2:
+                label.text = [NSString stringWithFormat:@"5小时"];
+                break;
+            case 3:
+                label.text = [NSString stringWithFormat:@"1天"];
+                break;
+            case 4:
+                label.text = [NSString stringWithFormat:@"2天"];
+                break;
+            case 5:
+                label.text = [NSString stringWithFormat:@"3天"];
+            default:
+                break;
+        }
     }
     else {
         label = [[UILabel alloc] initWithFrame:CGRectMake(0, 0,30, self.selectorTypeV.frame.size.width)];
+        switch (index.numberOfRowsInSelector) {
+            case 0:
+                label.text = [NSString stringWithFormat:@"篮球"];
+                break;
+            case 1:
+                label.text = [NSString stringWithFormat:@"足球"];
+                break;
+            case 2:
+                label.text = [NSString stringWithFormat:@"羽毛球"];
+                break;
+            case 3:
+                label.text = [NSString stringWithFormat:@"乒乓球"];
+                break;
+            case 4:
+                label.text = [NSString stringWithFormat:@"网球"];
+                break;
+            default:
+                break;
     }
-    label.text = [NSString stringWithFormat:@"%d",index];
+    
     label.textAlignment =  NSTextAlignmentCenter;
     label.backgroundColor = [UIColor clearColor];
     return label;

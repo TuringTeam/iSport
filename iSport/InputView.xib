@@ -70,7 +70,7 @@
 					<object class="IBUIPickerView" id="679202274">
 						<reference key="NSNextResponder" ref="191373211"/>
 						<int key="NSvFlags">290</int>
-						<string key="NSFrame">{{0, 332}, {320, 216}}</string>
+						<string key="NSFrame">{{0, 244}, {320, 216}}</string>
 						<reference key="NSSuperview" ref="191373211"/>
 						<reference key="NSWindow"/>
 						<string key="NSReuseIdentifierKey">_NS:9</string>
@@ -165,7 +165,7 @@
 					<object class="IBUIView" id="236707120">
 						<reference key="NSNextResponder" ref="191373211"/>
 						<int key="NSvFlags">292</int>
-						<string key="NSFrame">{{20, 183}, {280, 35}}</string>
+						<string key="NSFrame">{{20, 175}, {280, 35}}</string>
 						<reference key="NSSuperview" ref="191373211"/>
 						<reference key="NSWindow"/>
 						<reference key="NSNextKeyView" ref="679202274"/>
@@ -199,7 +199,7 @@
 						<bool key="IBUIAdjustsFontSizeToFit">NO</bool>
 					</object>
 				</array>
-				<string key="NSFrame">{{0, 20}, {320, 548}}</string>
+				<string key="NSFrame">{{0, 20}, {320, 460}}</string>
 				<reference key="NSSuperview"/>
 				<reference key="NSWindow"/>
 				<reference key="NSNextKeyView" ref="1064764190"/>
@@ -218,13 +218,13 @@
 							<integer value="3"/>
 						</array>
 						<array key="dict.values">
-							<string>{320, 568}</string>
-							<string>{568, 320}</string>
+							<string>{320, 480}</string>
+							<string>{480, 320}</string>
 						</array>
 					</object>
 					<string key="IBUITargetRuntime">IBCocoaTouchFramework</string>
-					<string key="IBUIDisplayName">Retina 4 Full Screen</string>
-					<int key="IBUIType">2</int>
+					<string key="IBUIDisplayName">Retina 3.5 Full Screen</string>
+					<int key="IBUIType">0</int>
 				</object>
 				<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 			</object>
@@ -309,12 +309,12 @@
 						<reference key="object" ref="191373211"/>
 						<array class="NSMutableArray" key="children">
 							<reference ref="1064764190"/>
-							<reference ref="679202274"/>
 							<reference ref="343967284"/>
 							<reference ref="1016102067"/>
 							<reference ref="336829428"/>
-							<reference ref="236707120"/>
 							<reference ref="632295683"/>
+							<reference ref="679202274"/>
+							<reference ref="236707120"/>
 						</array>
 						<reference key="parent" ref="0"/>
 					</object>
@@ -418,7 +418,6 @@
 					<string key="superclassName">UIViewController</string>
 					<dictionary class="NSMutableDictionary" key="outlets">
 						<string key="infoTF">UITextField</string>
-						<string key="isBtn">UIButton</string>
 						<string key="isChargesBtn">UIButton</string>
 						<string key="selectorTimeLimiteV">IZValueSelectorView</string>
 						<string key="selectorTypeV">IZValueSelectorView</string>
@@ -428,10 +427,6 @@
 						<object class="IBToOneOutletInfo" key="infoTF">
 							<string key="name">infoTF</string>
 							<string key="candidateClassName">UITextField</string>
-						</object>
-						<object class="IBToOneOutletInfo" key="isBtn">
-							<string key="name">isBtn</string>
-							<string key="candidateClassName">UIButton</string>
 						</object>
 						<object class="IBToOneOutletInfo" key="isChargesBtn">
 							<string key="name">isChargesBtn</string>
