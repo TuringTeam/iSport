@@ -8,15 +8,29 @@
 
 #import "DetailTypeCell.h"
 
+@interface DetailTypeCell ()
+
+@end
+
 @implementation DetailTypeCell
 
 - (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
 {
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
     if (self) {
-        // Initialization code
     }
     return self;
+}
+
+- (void)bindTitle:(NSString *)title detail:(NSString *)detail
+{
+	[self.textLabel setText:title];
+  [self.detailTextLabel setText:detail];
+}
+
+- (void)layoutSubviews
+{
+	[super layoutSubviews];
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated

@@ -7,17 +7,15 @@
 //
 
 #import "CenterViewC.h"
-//#import "MsgCell.h"
+#import "SRRefreshView.h"
 #import "CenterViewCell.h"
 #import "ListTableView.h"
 #import "DetailViewController.h"
 
 @interface CenterViewC ()
-
 @end
 
 @implementation CenterViewC
-
 - (void)viewDidLoad
 {
   [super viewDidLoad];
@@ -30,18 +28,26 @@
     sport.message = [NSString stringWithFormat:@"清华大学校篮球社，假期没事，组团打篮球，有一起的的么？篮球已有还缺五人!"];
     sport.pubTimeStr = [NSString stringWithFormat:@"%d分钟前",i+1];
     sport.endTimeDataStr = [NSString stringWithFormat:@"%d小时后",i+1];
-    //sport.address = [NSString stringWithFormat:@"1000m"];
-   // sport.remarks = [NSString stringWithFormat:@"remarks%d",i];
     sport.ballType = kBasketball;
     [self.listArray addObject:sport];
   }
   
   self.tableView = [[ListTableView alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+  
   _tableView.delegate=self;
   _tableView.dataSource=self;
   _tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
   [self.view addSubview:_tableView];
-  
+
+}
+
+- (void)setNavigationBarTitle:(NSString *)navigationBarTitle
+{
+	if (navigationBarTitle != _navigationBarTitle) {
+    [_navigationBarTitle release];
+    _navigationBarTitle = [navigationBarTitle copy];
+  }
+  self.title = _navigationBarTitle;
 }
 
 -(NSString *)getDate
@@ -91,7 +97,8 @@
 }
 
 /** 处理Cell点击*/
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+- (void)tableView:(UITableView *)tableView
+		didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
   DetailViewController *detailVC = [[DetailViewController alloc] initWithNibName:nil bundle:nil];
   [self.navigationController pushViewController:detailVC animated:YES];
 }

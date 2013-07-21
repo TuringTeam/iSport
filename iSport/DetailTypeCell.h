@@ -10,4 +10,6 @@
 
 @interface DetailTypeCell : UITableViewCell
 
+- (void)bindTitle:(NSString *)title detail:(NSString *)detail;
+
 @end

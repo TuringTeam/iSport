@@ -11,8 +11,10 @@
 
 @interface CenterViewC : UIViewController<UITableViewDataSource,UITableViewDelegate>
 
-@property(nonatomic,retain) NSMutableArray *listArray;
-@property(nonatomic,retain) UITableView *tableView;
+@property(nonatomic, retain) NSMutableArray *listArray;
+@property(nonatomic, retain) UITableView *tableView;
 @property (nonatomic, strong) sportMessage *sport;
+
+@property (nonatomic, copy) NSString *navigationBarTitle;
 
 @end

@@ -10,4 +10,6 @@
 
 @interface TimeTypeCell : UITableViewCell
 
+- (void)bindTitle:(NSString *)title timeStr:(NSString *)timeStr;
+
 @end

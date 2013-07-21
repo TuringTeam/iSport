@@ -12,7 +12,7 @@
 
 - (id)initWithFrame:(CGRect)frame
 {
-  self = [super initWithFrame:frame style:UITableViewStylePlain];
+  self = [super initWithFrame:frame style:UITableViewStyleGrouped];
   if (self) {
     [self setBackgroundView:nil];
     

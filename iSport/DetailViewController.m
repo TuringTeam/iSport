@@ -45,10 +45,14 @@ typedef NS_ENUM(NSInteger, PeopleCellType) {
 	PeopleCell = 0,
   PeopleCellTypeCount
 };
+static NSString * const text = @"一起来吧，周日1点半大运村中间长廊集合.这次的篮球赛我们一定要赢";
 
 @interface DetailViewController ()
 
 @property (nonatomic, strong) UITableView *tableView;
+@property (nonatomic, copy) NSString *Des;
+@property (nonatomic, strong) NSDictionary *dictionary;
+@property (nonatomic, copy) NSString *name;
 
 @end
 
@@ -68,8 +72,7 @@ typedef NS_ENUM(NSInteger, PeopleCellType) {
 {
   [super viewDidLoad];
   
-  //self.tableView = [[ListTableView alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-  self.tableView = [[UITableView alloc] initWithFrame:[[UIScreen mainScreen] bounds] style:UITableViewStyleGrouped];
+  self.tableView = [[ListTableView alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
   [self.tableView setDelegate:self];
   [self.tableView setDataSource:self];
   [self.view addSubview:self.tableView];
@@ -94,15 +97,27 @@ typedef NS_ENUM(NSInteger, PeopleCellType) {
 
 - (void)setUpSubViews
 {
-	DetailHeaderView *headerView = [[DetailHeaderView alloc] initWithFrame:CGRectMake(0, 0, 320, 1)];
-  UIImage *resizedImage = [[UIImage imageNamed:@"HeaderViewTopbg"] stretchableImageWithLeftCapWidth:28 topCapHeight:95];
-  UIImageView *headerBackGroundView = [[UIImageView alloc] initWithImage:resizedImage];
-  [headerView addSubview:headerBackGroundView];
+  //	DetailHeaderView *headerView = [[DetailHeaderView alloc] initWithFrame:CGRectMake(0, 0, 320, 1)];
+  //  UIImage *resizedImage = [[UIImage imageNamed:@"HeaderViewTopbg"] stretchableImageWithLeftCapWidth:28 topCapHeight:95];
+  //  UIImageView *headerBackGroundView = [[UIImageView alloc] initWithImage:resizedImage];
+  //  [headerView addSubview:headerBackGroundView];
   
-  [self.tableView setTableHeaderView:headerView];
+  //[self.tableView setTableHeaderView:headerView];
   //[headerView sendSubviewToBack:headerBackGroundView];
   
+  //self.dictionary = [NSDictionary dictionaryWithObject:<#(id)#> forKey:<#(id<NSCopying>)#>];
   
+  
+}
+
+- (CGFloat)tableView:(UITableView *)tableView
+		heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+	if (indexPath.section == 0 && indexPath.row == 0) {
+    return [TitleTypeCell RowHightWithObject:text];
+  }
+  
+  return 44;
 }
 
 - (void)didReceiveMemoryWarning
@@ -115,6 +130,7 @@ typedef NS_ENUM(NSInteger, PeopleCellType) {
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
+  NSLog(@"SectionCount:%d",SectionCount);
 	return SectionCount;
 }
 
@@ -146,9 +162,9 @@ typedef NS_ENUM(NSInteger, PeopleCellType) {
          cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
 	static NSString *TitleCellID = @"TITLE";
-  static NSString *TimeCellType = @"TIME";
-  static NSString *DetailCellType = @"DETAIL";
-  static NSString *AvatarCellType = @"AVATAR";
+  static NSString *TimeCellID = @"TIME";
+  static NSString *DetailCellID = @"DETAIL";
+  static NSString *AvatarCellID = @"AVATAR";
   
   UITableViewCell *cell = nil;
   
@@ -156,12 +172,13 @@ typedef NS_ENUM(NSInteger, PeopleCellType) {
   NSInteger row = indexPath.row;
   
   switch (section) {
-    case DesSection:
+    case 0:
       switch (row) {
-        case DesCell:
-          cell = [tableView dequeueReusableCellWithIdentifier:TimeCellType];
+        case 0:
+          cell = [tableView dequeueReusableCellWithIdentifier:TitleCellID];
           if (!cell) {
             cell = [[[TitleTypeCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:TitleCellID] autorelease];
+            [(TitleTypeCell *)cell bindTitle:text];
           }
           break;
           
@@ -169,39 +186,46 @@ typedef NS_ENUM(NSInteger, PeopleCellType) {
           break;
       }
       break;
-    case DetailSection:
+    case 1:
       switch (row) {
-        case TimeCell:
-          cell = [tableView dequeueReusableCellWithIdentifier:TimeCellType];
-          if (cell != nil) {
-            cell = [[[TimeTypeCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:TimeCellType] autorelease];
+        case 0:
+          cell = [tableView dequeueReusableCellWithIdentifier:TimeCellID];
+          if (!cell) {
+            cell = [[[TimeTypeCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:TimeCellID] autorelease];
+            [(TimeTypeCell *)cell bindTitle:@"时间" timeStr:@"2013-07-18"];
           }
           break;
-        case DistabceCell:
-          cell = [tableView dequeueReusableCellWithIdentifier:TimeCellType];
-          if (cell == nil) {
-            cell = [[[TimeTypeCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:TimeCellType] autorelease];
+          
+        case 1:
+          cell = [tableView dequeueReusableCellWithIdentifier:TimeCellID];
+          if (!cell) {
+            cell = [[[TimeTypeCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:TimeCellID] autorelease];
+            [(TimeTypeCell *)cell bindTitle:@"距离" timeStr:@"3.12km"];
           }
           break;
-        case LocationCell:
-          cell = [tableView dequeueReusableCellWithIdentifier:DetailCellType];
-          if (cell == nil) {
-            cell = [[[DetailTypeCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:DetailCellType] autorelease];
+          
+        case 2:
+          cell = [tableView dequeueReusableCellWithIdentifier:DetailCellID];
+          if (!cell) {
+            cell = [[[DetailTypeCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:DetailCellID] autorelease];
           }
+          cell.accessoryView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"ArrowRight"]];
+          [(DetailTypeCell *)cell bindTitle:@"地点" detail:@"海淀区知春路29号院"];
           break;
           
         default:
           break;
       }
       break;
-    case PeopleSection:
+    case 2:
       
       switch (row) {
-        case CellTypeAvatar:
-          cell = [tableView dequeueReusableCellWithIdentifier:AvatarCellType];
-          if (cell == nil) {
-            cell = [[[AvatarTypeCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:AvatarCellType] autorelease];
+        case 0:
+          cell = [tableView dequeueReusableCellWithIdentifier:AvatarCellID];
+          if (!cell) {
+            cell = [[[AvatarTypeCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:AvatarCellID] autorelease];
           }
+          [(AvatarTypeCell *)cell bindAvatarImage:nil message:@"神经比较大"];
           break;
           
         default:
@@ -209,10 +233,10 @@ typedef NS_ENUM(NSInteger, PeopleCellType) {
       }
       break;
     default:
-       NSAssert(0, @"Overflow cell");
+      //NSAssert(0, @"Overflow cell");
       break;
   }
-
+  cell.selectionStyle = UITableViewCellSelectionStyleNone;
   return cell;
 }
 
@@ -224,10 +248,10 @@ titleForHeaderInSection:(NSInteger)section
     case DesSection:
       title = @"活动介绍";
       break;
-      case DetailSection:
+    case DetailSection:
       title = @"活动资料";
       break;
-      case PeopleSection:
+    case PeopleSection:
       title = @"参加人员";
       break;
     default:

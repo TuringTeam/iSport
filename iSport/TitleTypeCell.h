@@ -10,4 +10,8 @@
 
 @interface TitleTypeCell : UITableViewCell
 
+- (void)bindTitle:(NSString *)title;
+
++ (CGFloat)RowHightWithObject:(NSString *)object;
+
 @end

@@ -10,4 +10,6 @@
 
 @interface AvatarTypeCell : UITableViewCell
 
+- (void)bindAvatarImage:(NSString *)avatarImage message:(NSString *)message;
+
 @end
