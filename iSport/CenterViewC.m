@@ -16,16 +16,19 @@
 
 @interface CenterViewC ()
 
+@property (nonatomic, strong) NSMutableArray *distanceArray;
+
 @end
 
 @implementation CenterViewC
+@synthesize distanceArray = distanceArray_;
 
 - (void)viewDidLoad
 {
   [super viewDidLoad];
   
   [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(updateData:) name:@"updateData" object:nil];
-    
+  
   self.listArray = [ListData allListData];
   self.tableView = [[ListTableView alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
   
@@ -45,7 +48,7 @@
 	}
 	
 	[_refreshHeaderView refreshLastUpdatedDate];
-
+  
 }
 
 - (void)setNavigationBarTitle:(NSString *)navigationBarTitle
@@ -58,9 +61,9 @@
 }
 
 -(void)updateData:(NSNotification*)notification{
-    NSMutableArray *array = [notification object];
-    _listArray = [array copy];
-    [self.tableView reloadData];
+  NSMutableArray *array = [notification object];
+  _listArray = [array copy];
+  
 }
 
 -(NSString *)getDate
@@ -105,13 +108,13 @@
   cell.selectionStyle = UITableViewCellSelectionStyleNone;
   cell.accessoryView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"ArrowRight"]];
   [cell bindCellObject:[self.listArray objectAtIndex:indexPath.row]];
-  
+  [cell setDistanceLabelText:[self.distanceArray objectAtIndex:indexPath.row]];
   return cell;
 }
 
 /** 处理Cell点击*/
 - (void)tableView:(UITableView *)tableView
-		didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
   DetailViewController *detailVC = [[DetailViewController alloc] initWithNibName:nil bundle:nil];
   [self.navigationController pushViewController:detailVC animated:YES];
 }
@@ -171,10 +174,26 @@
 - (void)doneLoadingTableViewData{
 	
 	//  model should call this when its done loading
-    self.listArray = [ListData allListData];
+  self.listArray = [ListData allListData];
 	_reloading = NO;
 	[_refreshHeaderView egoRefreshScrollViewDataSourceDidFinishedLoading:self.tableView];
-    [self.tableView reloadData];
+  
+  dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+    self.distanceArray = [NSMutableArray arrayWithCapacity:[self.listArray count]];
+    for (NSUInteger j = 0; j < [self.listArray count]; j++) {
+      NSInteger i = arc4random() % 1000;
+      NSString *str = [NSString stringWithFormat:@"%d米",i];
+      NSLog(@"Str:%@",str);
+      [self.distanceArray addObject:str];
+    }
+    
+    [self.distanceArray sortUsingSelector:@selector(compare:)];
+    
+    dispatch_async(dispatch_get_main_queue(), ^{
+      [self.tableView reloadData];
+    });
+    
+  });
 	
 }
 
