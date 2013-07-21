@@ -173,7 +173,6 @@
   
   
   [self.publishTimeLabel sizeToFit];
-  
 	
 }
 

@@ -103,9 +103,6 @@
     }
     else if ([annotation isKindOfClass:[CalloutMapAnnotation class]]){
         
-        //此时annotation就是我们calloutview的annotation
-        CalloutMapAnnotation *ann = (CalloutMapAnnotation*)annotation;
-        
         //如果可以重用
         CallOutAnnotationView *calloutannotationview = (CallOutAnnotationView *)[mapView dequeueReusableAnnotationViewWithIdentifier:@"calloutview"];
         
