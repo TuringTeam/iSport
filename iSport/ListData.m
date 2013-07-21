@@ -18,8 +18,10 @@
     [allArray enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
         sportMessage *sportMsg = [sportMessage new];
         sportMsg.ID = [obj objectForKey:@"ID"];
-        sportMsg.message = [obj objectForKey:@"message"];
+        sportMsg.message = [obj objectForKey:@"message"];										
+      sportMsg.endTimeDataStr = [obj objectForKey:@"endTimeDateStr"];
         sportMsg.endTimeDate = [obj objectForKey:@"endTimeDate"];
+      sportMsg.pubTimeStr = [obj objectForKey:@"pubTimeStr"];
         sportMsg.pubTimeDate = [obj objectForKey:@"pubTimeDate"];
         sportMsg.headImage = [obj objectForKey:@"headImage"];
         sportMsg.longitude = [[obj objectForKey:@"longitude"]doubleValue];
@@ -28,8 +30,8 @@
         sportMsg.ballType = [[obj objectForKey:@"kBallType"]intValue];
         [allData addObject:sportMsg];
     }];
-    //[allData release];
-    return allData;
+    //[allData release];`
+    				  return allData;
 }
 
 +(NSMutableArray*)sortListData:(int)sort{
@@ -53,4 +55,4 @@
         }];
     return allData;
 }
-@end
+ @end
