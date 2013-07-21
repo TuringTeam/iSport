@@ -109,14 +109,16 @@
     cell.selectedBackgroundView = [[[UIView alloc] initWithFrame:cell.frame] autorelease];
     cell.selectedBackgroundView.backgroundColor = [UIColor colorWithRed:0.059 green:0.063 blue:0.075 alpha:1.000];
     [cell addSubview:line];
-    
     return cell;
 }
 
 /** 处理Cell点击*/
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-    if (indexPath.row == 0) {
-        [[NSNotificationCenter defaultCenter] postNotificationName:@"present" object:nil];
+    if (indexPath.row == 1) {
+        [[NSNotificationCenter defaultCenter] postNotificationName:@"present" object:@"presentInput"];
+    }else{
+        [[NSNotificationCenter defaultCenter] postNotificationName:@"present" object:@"presentCenter"];
+        [[NSNotificationCenter defaultCenter] postNotificationName:@"updateData" object:[ListData sortListData:indexPath.row]];
     }
 }
 

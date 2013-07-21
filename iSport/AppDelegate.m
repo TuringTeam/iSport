@@ -38,7 +38,7 @@
     self.viewController = [JASidePanelController new];
     self.viewController.shouldDelegateAutorotateToVisiblePanel = NO;
     self.viewController.leftPanel = [LeftViewC new];
-    //self.viewController.leftGapPercentage = 0.4;
+    self.viewController.leftGapPercentage = 0.4;
     self.viewController.rightPanel = [RightViewC new];
   
   MLNavigationController *navCtrl = [[[MLNavigationController alloc]initWithRootViewController:[CenterViewC new]]autorelease];
@@ -54,10 +54,14 @@
 }
 
 - (void)receivingMethodOnListener:(NSNotification*)notification{
-    
-    InputVC *inputVC = [[InputVC alloc]init];
-    [self.viewController presentModalViewController:inputVC animated:YES];
-    [inputVC release];
+     NSString *str  = notification.object;
+    if ([str isEqualToString:@"presentCenter"]) {
+        [self.viewController showCenterPanelAnimated:YES];
+    }else if ([str isEqualToString:@"presentInput"]){
+        InputVC *inputVC = [[InputVC alloc]init];
+        [self.viewController presentModalViewController:inputVC animated:YES];
+        [inputVC release];
+    }
 }
 
 
