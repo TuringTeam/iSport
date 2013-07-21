@@ -8,7 +8,7 @@
 
 #import "LeftViewC.h"
 #import "ListData.h"
-#import "InputViewController.h"
+#import "InputVC.h"
 @interface SeperateLine : UIView
 
 @end
