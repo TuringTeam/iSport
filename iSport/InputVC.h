@@ -14,6 +14,7 @@
 @property (retain, nonatomic) IBOutlet IZValueSelectorView *timeLimieView;
 @property (retain, nonatomic) IBOutlet UIButton *isChargesBtn;
 @property (retain, nonatomic) IBOutlet UITextView *infoTextView;
+@property (retain, nonatomic) IBOutlet UIButton *backBtn;
 
 - (IBAction)isCharges:(id)sender;
 @end

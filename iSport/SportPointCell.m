@@ -8,6 +8,7 @@
 
 #import "SportPointCell.h"  
 @implementation SportPointCell
+@synthesize nameLabel,speedLabel;
 - (id)initWithFrame:(CGRect)frame
 {
     self = [super initWithFrame:frame];
@@ -17,10 +18,11 @@
 
 - (void)dealloc
 {
-    [_aliasLabel release];
-    [_speedLabel release];
-    [_degreeLabel release];
-    [_nameLabel release];
+
+    [speedLabel release];
+
+    [nameLabel release];
+    [_image release];
     [super dealloc];
 }
 @end
