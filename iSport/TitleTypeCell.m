@@ -8,6 +8,7 @@
 
 #import "TitleTypeCell.h"
 #import "UIView+Frame.h"
+#include "sportMessage.h"
 
 @interface TitleTypeCell ()
 
@@ -37,6 +38,12 @@
       
     }
     return self;
+}
+
+- (void)bindWithObject:(id)object
+{
+	sportMessage *mySport = (sportMessage *)object;
+  [self.titleLabel setText:mySport.message];
 }
 
 - (void)bindTitle:(NSString *)title

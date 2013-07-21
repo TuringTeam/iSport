@@ -59,17 +59,17 @@
     _listArray = [listArray retain];
   }
   
- 
+  
   [self.distanceArray removeAllObjects];
   self.distanceArray = [NSMutableArray arrayWithCapacity:[_listArray count]];
   for (NSUInteger j = 0; j < [_listArray count]; j++) {
     NSInteger i = arc4random() % 1000;
     NSString *str = [NSString stringWithFormat:@"%d米",i];
-    NSLog(@"Str:%@",str);
+//    NSLog(@"Str:%@",str);
     [self.distanceArray addObject:str];
   }
   
-  [self.distanceArray sortUsingSelector:@selector(compare:)];  
+  [self.distanceArray sortUsingSelector:@selector(compare:)];
   
 }
 

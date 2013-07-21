@@ -898,8 +898,8 @@
 		B5C2F444179A6D990049B8A8 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "iPhone Developer: Hangzhou Zheng (H4U5Z34JQ5)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Hangzhou Zheng (H4U5Z34JQ5)";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Hang Li (B4WB78DCEG)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Hang Li (B4WB78DCEG)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "iSport/iSport-Prefix.pch";
 				INFOPLIST_FILE = "iSport/iSport-Info.plist";
@@ -909,8 +909,8 @@
 					"\"$(SRCROOT)/iSport\"",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "D49E8444-7E16-425C-BE6B-A143FF6634EE";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "D49E8444-7E16-425C-BE6B-A143FF6634EE";
+				PROVISIONING_PROFILE = "72E76468-5FD0-4859-A66A-3C404D67FEEE";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "72E76468-5FD0-4859-A66A-3C404D67FEEE";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;

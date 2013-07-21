@@ -13,4 +13,6 @@
 @property (nonatomic, strong) UIImageView *backgroundView;
 @property (nonatomic, strong) UIImageView *avatarView;
 
+- (void)bindWithObject:(id)object;
+
 @end

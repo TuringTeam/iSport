@@ -82,7 +82,7 @@
  */
 - (void)mapView:(BMKMapView *)mapView onClickedMapPoi:(BMKMapPoi*)mapPoi
 {
-    NSLog(@"%@",mapPoi.text);
+//    NSLog(@"%@",mapPoi.text);
 }
 
 // Override
@@ -135,7 +135,7 @@
 // Override
 - (void)mapView:(BMKMapView *)mapView annotationViewForBubble:(BMKAnnotationView *)view;
 {
-    NSLog(@"paopaoclick");
+//    NSLog(@"paopaoclick");
 }
 
 /**
@@ -145,7 +145,7 @@
  */
 - (void)mapView:(BMKMapView *)mapView didSelectAnnotationView:(BMKAnnotationView *)view
 {
-    NSLog(@"didSelectAnnotationView");
+//    NSLog(@"didSelectAnnotationView");
     //CustomPointAnnotation 是自定义的marker标注点，通过这个来得到添加marker时设置的pointCalloutInfo属性
     CustomPointAnnotation *annn = (CustomPointAnnotation*)view.annotation;
     

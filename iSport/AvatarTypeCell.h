@@ -12,4 +12,6 @@
 
 - (void)bindAvatarImage:(NSString *)avatarImage message:(NSString *)message;
 
+- (void)bindWithObject:(id)object;
+
 @end

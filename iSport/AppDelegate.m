@@ -32,7 +32,7 @@
   // 如果要关注网络及授权验证事件，请设定     generalDelegate参数
   BOOL ret = [_mapManager start:@"CE7C2024B66924A774B80A7A4836E3E0607C5049"  generalDelegate:nil];
   if (!ret) {
-    NSLog(@"manager start failed!");
+//    NSLog(@"manager start failed!");
   }
   [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(receivingMethodOnListener:) name:@"present" object:nil];
   self.viewController = [JASidePanelController new];

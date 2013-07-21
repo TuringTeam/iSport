@@ -13,6 +13,7 @@
 #import "TitleTypeCell.h"
 #import "DetailTypeCell.h"
 #import "AvatarTypeCell.h"
+#import "sportMessage.h"
 
 typedef NS_ENUM(NSInteger, CellType) {
 	CellTypeTitle = 0,
@@ -54,10 +55,23 @@ static NSString * const text = @"一起来吧，周日1点半大运村中间长�
 @property (nonatomic, strong) NSDictionary *dictionary;
 @property (nonatomic, copy) NSString *name;
 
+@property (nonatomic, copy) NSString *desText;
+@property (nonatomic, copy) NSString *timeText;
+@property (nonatomic, copy) NSString *locationText;
+@property (nonatomic, assign) BOOL isCharge;
+
+@property (nonatomic, strong) sportMessage *mySport;
+
 @end
 
 @implementation DetailViewController
 @synthesize tableView = tableView_;
+@synthesize desText = desText_;
+@synthesize timeText = timeText_;
+@synthesize locationText = locationText_;
+@synthesize isCharge = isCharge_;
+
+@synthesize mySport = mySport_;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -136,7 +150,7 @@ static NSString * const text = @"一起来吧，周日1点半大运村中间长�
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-  NSLog(@"Row = %d",section);
+//  NSLog(@"Row = %d",section);
   
 	NSInteger row = 0;
   switch (section) {
@@ -153,7 +167,7 @@ static NSString * const text = @"一起来吧，周日1点半大运村中间长�
     default:
       break;
   }
-  NSLog(@"  \t%d",row);
+//  NSLog(@"  \t%d",row);
   return row;
 }
 
@@ -179,6 +193,7 @@ static NSString * const text = @"一起来吧，周日1点半大运村中间长�
           if (!cell) {
             cell = [[[TitleTypeCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:TitleCellID] autorelease];
             [(TitleTypeCell *)cell bindTitle:text];
+            //[(TitleTypeCell *)cell bindWithObject:self.mySport];
           }
           break;
           
@@ -193,6 +208,7 @@ static NSString * const text = @"一起来吧，周日1点半大运村中间长�
           if (!cell) {
             cell = [[[TimeTypeCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:TimeCellID] autorelease];
             [(TimeTypeCell *)cell bindTitle:@"时间" timeStr:@"2013-07-18"];
+            //[(TimeTypeCell *)cell bindWithObject:self.mySport];
           }
           break;
           
@@ -201,6 +217,7 @@ static NSString * const text = @"一起来吧，周日1点半大运村中间长�
           if (!cell) {
             cell = [[[TimeTypeCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:TimeCellID] autorelease];
             [(TimeTypeCell *)cell bindTitle:@"距离" timeStr:@"3.12km"];
+            //[(TimeTypeCell *)cell bindWithObject:self.mySport];
           }
           break;
           
@@ -211,6 +228,7 @@ static NSString * const text = @"一起来吧，周日1点半大运村中间长�
           }
           cell.accessoryView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"ArrowRight"]];
           [(DetailTypeCell *)cell bindTitle:@"地点" detail:@"海淀区知春路29号院"];
+          //[(DetailTypeCell *)cell bindWithObject:self.mySport];
           break;
           
         default:
@@ -225,7 +243,8 @@ static NSString * const text = @"一起来吧，周日1点半大运村中间长�
           if (!cell) {
             cell = [[[AvatarTypeCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:AvatarCellID] autorelease];
           }
-          [(AvatarTypeCell *)cell bindAvatarImage:nil message:@"神经比较大"];
+          [(AvatarTypeCell *)cell bindAvatarImage:nil message:@"否"];
+          //[(AvatarTypeCell *)cell bindWithObject:self.mySport];
           break;
           
         default:
@@ -240,6 +259,11 @@ static NSString * const text = @"一起来吧，周日1点半大运村中间长�
   return cell;
 }
 
+- (void)bindWithObject:(id)object
+{
+	self.mySport = (sportMessage *)object;
+}
+
 - (NSString *)tableView:(UITableView *)tableView
 titleForHeaderInSection:(NSInteger)section
 {
@@ -252,7 +276,7 @@ titleForHeaderInSection:(NSInteger)section
       title = @"活动资料";
       break;
     case PeopleSection:
-      title = @"参加人员";
+      title = @"是否收费";
       break;
     default:
       

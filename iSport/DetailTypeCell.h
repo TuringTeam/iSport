@@ -12,4 +12,6 @@
 
 - (void)bindTitle:(NSString *)title detail:(NSString *)detail;
 
+- (void)bindWithObject:(id)object;
+
 @end

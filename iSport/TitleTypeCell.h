@@ -14,4 +14,6 @@
 
 + (CGFloat)RowHightWithObject:(NSString *)object;
 
+- (void)bindWithObject:(id)object;
+
 @end

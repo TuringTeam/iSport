@@ -150,7 +150,7 @@
 
 #pragma IZValueSelector delegate
 - (void)selector:(IZValueSelectorView *)valueSelector didSelectRowAtIndex:(NSInteger)index {
-    NSLog(@"Selected index %d",index);
+//    NSLog(@"Selected index %d",index);
 }
 
 - (void)dealloc {

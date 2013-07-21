@@ -12,4 +12,6 @@
 
 - (void)bindTitle:(NSString *)title timeStr:(NSString *)timeStr;
 
+- (void)bindWithObject:(id)object;
+
 @end
