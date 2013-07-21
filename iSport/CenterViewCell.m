@@ -43,7 +43,7 @@
     
     self.backgroundView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"cellbg"]];
     
-    self.avatarView = [[UIImageView alloc] initWithFrame:CGRectMake(10, 10, 57, 57)];
+    self.avatarView = [[UIImageView alloc] initWithFrame:CGRectMake(5, 10, 57, 57)];
     [[avatarView_ layer] setCornerRadius:27.0f];
     [[avatarView_ layer] setMasksToBounds:YES];
     [self.contentView addSubview:avatarView_];
@@ -117,14 +117,9 @@
     [self.avatarView setImage:[UIImage imageNamed:imageName]];
   }
   
-  //[self.avatarView setImage:[UIImage imageNamed:@"test"]];
-  
   if (sport.message) {
     [self.messageLabel setText:sport.message];
   }
-  //  if (sport.address) {
-  //    [self.distanceLabel setText:sport.address];
-  //  }
   
   
   
@@ -146,7 +141,7 @@
       [self.sportImage setImage:[UIImage imageNamed:@"markbadminton"]];
       break;
     case kTennisBall:
-      [self.sportImage setImage:[UIImage imageNamed:@"marktinnisball"]];
+      [self.sportImage setImage:[UIImage imageNamed:@"marktennisball"]];
       break;
     case kPingpong:
       [self.sportImage setImage:[UIImage imageNamed:@"markpingpang"]];
@@ -174,13 +169,13 @@
   [self.publishTimeLabel setX:[self.messageLabel x]];
   
   [self.distanceLabel sizeToFit];
-  CGFloat distabceLabelOriginX = [self.sportImage left] - [self.distanceLabel width] - 10;
+  CGFloat distabceLabelOriginX = [self.sportImage left] - [self.distanceLabel width] - 20;
   [self.distanceLabel setY:3];
   [self.distanceLabel setX:distabceLabelOriginX];
   
   [self.timeUpLabel sizeToFit];
   [self.timeUpLabel setY:labelOriginY];
-  [self.timeUpLabel setX:320 - [self.timeUpLabel width] - 10];
+  [self.timeUpLabel setX:320 - [self.timeUpLabel width] - 20];
   
   
   [self.publishTimeLabel sizeToFit];

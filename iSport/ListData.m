@@ -30,8 +30,8 @@
         sportMsg.ballType = [[obj objectForKey:@"kBallType"]intValue];
         [allData addObject:sportMsg];
     }];
-    //[allData release];`
-    				  return allData;
+  
+  return allData;
 }
 
 +(NSMutableArray*)sortListData:(int)sort{

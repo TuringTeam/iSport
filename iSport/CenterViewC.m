@@ -30,6 +30,7 @@
   [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(updateData:) name:@"updateData" object:nil];
   
   self.listArray = [ListData allListData];
+  
   self.tableView = [[ListTableView alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
   
   _tableView.delegate=self;
@@ -51,6 +52,27 @@
   
 }
 
+- (void)setListArray:(NSMutableArray *)listArray
+{
+	if (listArray != _listArray) {
+    [_listArray release];
+    _listArray = [listArray retain];
+  }
+  
+ 
+  [self.distanceArray removeAllObjects];
+  self.distanceArray = [NSMutableArray arrayWithCapacity:[_listArray count]];
+  for (NSUInteger j = 0; j < [_listArray count]; j++) {
+    NSInteger i = arc4random() % 1000;
+    NSString *str = [NSString stringWithFormat:@"%d米",i];
+    NSLog(@"Str:%@",str);
+    [self.distanceArray addObject:str];
+  }
+  
+  [self.distanceArray sortUsingSelector:@selector(compare:)];  
+  
+}
+
 - (void)setNavigationBarTitle:(NSString *)navigationBarTitle
 {
 	if (navigationBarTitle != _navigationBarTitle) {
@@ -62,7 +84,7 @@
 
 -(void)updateData:(NSNotification*)notification{
   NSMutableArray *array = [notification object];
-  _listArray = [array copy];
+  self.listArray = [array copy];
   
 }
 
@@ -178,23 +200,6 @@ didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
 	_reloading = NO;
 	[_refreshHeaderView egoRefreshScrollViewDataSourceDidFinishedLoading:self.tableView];
   
-  dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
-    self.distanceArray = [NSMutableArray arrayWithCapacity:[self.listArray count]];
-    for (NSUInteger j = 0; j < [self.listArray count]; j++) {
-      NSInteger i = arc4random() % 1000;
-      NSString *str = [NSString stringWithFormat:@"%d米",i];
-      NSLog(@"Str:%@",str);
-      [self.distanceArray addObject:str];
-    }
-    
-    [self.distanceArray sortUsingSelector:@selector(compare:)];
-    
-    dispatch_async(dispatch_get_main_queue(), ^{
-      [self.tableView reloadData];
-    });
-    
-  });
-	
 }
 
 @end

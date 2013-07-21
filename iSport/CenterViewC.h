@@ -17,7 +17,7 @@
 	BOOL _reloading;
 }
 
-@property(nonatomic, retain) NSMutableArray *listArray;  //数据源
+@property(nonatomic, strong) NSMutableArray *listArray;  //数据源
 @property(nonatomic, retain) UITableView *tableView;		 //TableView
 @property (nonatomic, strong) sportMessage *sport;			 //数据对象
 
