@@ -43,7 +43,7 @@
     
     self.backgroundView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"cellbg"]];
     
-    self.avatarView = [[UIImageView alloc] initWithFrame:CGRectMake(5, 10, 57, 57)];
+    self.avatarView = [[UIImageView alloc] initWithFrame:CGRectMake(10, 10, 57, 57)];
     [[avatarView_ layer] setCornerRadius:27.0f];
     [[avatarView_ layer] setMasksToBounds:YES];
     [self.contentView addSubview:avatarView_];
@@ -65,8 +65,6 @@
     [distanceLabel_ setTextColor:LabelColor];
     [distanceLabel_ setFont:[UIFont systemFontOfSize:12.0f]];
     [distanceLabel_ setBackgroundColor:[UIColor clearColor]];
-    [distanceLabel_ setX:180];
-    [distanceLabel_ setY:5];
     [self.contentView addSubview:distanceLabel_];
     
     self.publishTimeLabel = [[UILabel alloc] init];
@@ -100,12 +98,6 @@
   
 }
 
-- (void)setDistanceLabelText:(NSString *)text
-{
-	[self.distanceLabel setText:text];
-  [self.distanceLabel sizeToFit];
-}
-
 - (void)bindCellObject:(id)object
 {
   [self clearCellContent];
@@ -117,12 +109,14 @@
     [self.avatarView setImage:[UIImage imageNamed:imageName]];
   }
   
+  //[self.avatarView setImage:[UIImage imageNamed:@"test"]];
+  
   if (sport.message) {
     [self.messageLabel setText:sport.message];
   }
-  
-  
-  
+//  if (sport.address) {
+//    [self.distanceLabel setText:sport.address];
+//  }
   if (sport.pubTimeStr) {
     [self.publishTimeLabel setText:sport.pubTimeStr];
   }
@@ -137,13 +131,13 @@
     case kFootball:
       [self.sportImage setImage:[UIImage imageNamed:@"markfootball"]];
       break;
-    case kBadminton:
+      case kBadminton:
       [self.sportImage setImage:[UIImage imageNamed:@"markbadminton"]];
       break;
-    case kTennisBall:
-      [self.sportImage setImage:[UIImage imageNamed:@"marktennisball"]];
+      case kTennisBall:
+      [self.sportImage setImage:[UIImage imageNamed:@"marktinnisball"]];
       break;
-    case kPingpong:
+      case kPingpong:
       [self.sportImage setImage:[UIImage imageNamed:@"markpingpang"]];
       break;
     default:
@@ -154,7 +148,7 @@
 - (void)layoutSubviews
 {
 	[super layoutSubviews];
-  
+
   CGFloat labelOriginY = CellDefaultHeight - 18;
   
   CGFloat cellCenterY = CellDefaultHeight/2;
@@ -175,7 +169,7 @@
   
   [self.timeUpLabel sizeToFit];
   [self.timeUpLabel setY:labelOriginY];
-  [self.timeUpLabel setX:320 - [self.timeUpLabel width] - 20];
+  [self.timeUpLabel setX:320 - [self.timeUpLabel width] - 30];
   
   
   [self.publishTimeLabel sizeToFit];

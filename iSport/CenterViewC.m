@@ -14,43 +14,41 @@
 #import "sportMessage.h"
 #import "ListData.h"
 
-@interface CenterViewC ()
+@interface CenterViewC (){
 
-@property (nonatomic, strong) NSMutableArray *distanceArray;
-
+}
+@property (nonatomic,retain)NSMutableArray *distanceArray;
 @end
 
 @implementation CenterViewC
-@synthesize distanceArray = distanceArray_;
 
 - (void)viewDidLoad
 {
   [super viewDidLoad];
-  
+  self.view.backgroundColor = [UIColor colorWithRed:0.910 green:0.910 blue:0.906 alpha:1.000];
   [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(updateData:) name:@"updateData" object:nil];
-  
+  [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(refresh) name:@"refresh" object:nil];
+  [self setNavigationBarTitle:@"周边运动"];
   self.listArray = [ListData allListData];
+  self.tableView = [[ListTableView alloc] initWithFrame:self.view.bounds];
   
-  self.tableView = [[ListTableView alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-  
-  _tableView.delegate=self;
-  _tableView.dataSource=self;
+  _tableView.delegate = self;
+  _tableView.dataSource = self;
   _tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
   [self.view addSubview:_tableView];
-  
+  _tableView.backgroundColor = [UIColor colorWithRed:0.910 green:0.910 blue:0.906 alpha:1.000];
   if (_refreshHeaderView == nil) {
-		
 		EGORefreshTableHeaderView *view = [[EGORefreshTableHeaderView alloc] initWithFrame:CGRectMake(0.0f, 0.0f - self.tableView.bounds.size.height, self.view.frame.size.width, self.tableView.bounds.size.height)];
 		view.delegate = self;
 		[self.tableView addSubview:view];
 		_refreshHeaderView = view;
 		[view release];
-		
 	}
 	
 	[_refreshHeaderView refreshLastUpdatedDate];
-  
+
 }
+
 
 - (void)setListArray:(NSMutableArray *)listArray
 {
@@ -58,7 +56,6 @@
     [_listArray release];
     _listArray = [listArray retain];
   }
-  
   
   [self.distanceArray removeAllObjects];
   self.distanceArray = [NSMutableArray arrayWithCapacity:[_listArray count]];
@@ -70,7 +67,12 @@
   }
   
   [self.distanceArray sortUsingSelector:@selector(compare:)];
-  
+}
+
+-(void)refresh{
+    [self setNavigationBarTitle:@"周边运动"];
+    self.listArray = [ListData allListData];
+    [self.tableView reloadData];
 }
 
 - (void)setNavigationBarTitle:(NSString *)navigationBarTitle
@@ -83,9 +85,22 @@
 }
 
 -(void)updateData:(NSNotification*)notification{
-  NSMutableArray *array = [notification object];
-  self.listArray = [array copy];
-  
+    NSMutableArray *array = [notification object];
+    _listArray = [array copy];
+    [self.tableView reloadData];
+    sportMessage *spm = [_listArray objectAtIndex:0];
+    int seleValue = spm.ballType;
+    if (seleValue == 0) {
+        [self setNavigationBarTitle:@"篮球"];
+    }else if (seleValue == 1){
+        [self setNavigationBarTitle:@"足球"];
+    }else if (seleValue == 2){
+        [self setNavigationBarTitle:@"羽毛球"];
+    }else if (seleValue == 3){
+        [self setNavigationBarTitle:@"乒乓球"];
+    }else if (seleValue == 4){
+        [self setNavigationBarTitle:@"网球"];
+    }
 }
 
 -(NSString *)getDate
@@ -130,13 +145,13 @@
   cell.selectionStyle = UITableViewCellSelectionStyleNone;
   cell.accessoryView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"ArrowRight"]];
   [cell bindCellObject:[self.listArray objectAtIndex:indexPath.row]];
-  [cell setDistanceLabelText:[self.distanceArray objectAtIndex:indexPath.row]];
+  
   return cell;
 }
 
 /** 处理Cell点击*/
 - (void)tableView:(UITableView *)tableView
-didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+		didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
   DetailViewController *detailVC = [[DetailViewController alloc] initWithNibName:nil bundle:nil];
   [self.navigationController pushViewController:detailVC animated:YES];
 }
@@ -188,18 +203,18 @@ didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
 #pragma mark Data Source Loading / Reloading Methods
 
 - (void)reloadTableViewDataSource{
-	
 	_reloading = YES;
-	
 }
 
 - (void)doneLoadingTableViewData{
 	
 	//  model should call this when its done loading
-  self.listArray = [ListData allListData];
+    self.listArray = [ListData allListData];
+    [self setNavigationBarTitle:@"周边运动"];
 	_reloading = NO;
 	[_refreshHeaderView egoRefreshScrollViewDataSourceDidFinishedLoading:self.tableView];
-  
+    [self.tableView reloadData];
+	
 }
 
 @end

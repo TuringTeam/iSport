@@ -20,78 +20,75 @@
 
 - (void)dealloc
 {
-  [_window release];
-  [super dealloc];
+    [_window release];
+    [super dealloc];
 }
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-  self.window = [[[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]] autorelease];
+    self.window = [[[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]] autorelease];
+    
+    _mapManager = [[BMKMapManager alloc]init];
+    // 如果要关注网络及授权验证事件，请设定     generalDelegate参数
+    BOOL ret = [_mapManager start:@"CE7C2024B66924A774B80A7A4836E3E0607C5049"  generalDelegate:nil];
+    if (!ret) {
+        NSLog(@"manager start failed!");
+    }
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(receivingMethodOnListener:) name:@"present" object:nil];
+    self.viewController = [JASidePanelController new];
+    self.viewController.shouldDelegateAutorotateToVisiblePanel = NO;
+    self.viewController.leftPanel = [LeftViewC new];
+    self.viewController.leftGapPercentage = 0.5;
+    self.viewController.rightPanel = [RightViewC new];
   
-  _mapManager = [[BMKMapManager alloc]init];
-  // 如果要关注网络及授权验证事件，请设定     generalDelegate参数
-  BOOL ret = [_mapManager start:@"CE7C2024B66924A774B80A7A4836E3E0607C5049"  generalDelegate:nil];
-  if (!ret) {
-//    NSLog(@"manager start failed!");
-  }
-  [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(receivingMethodOnListener:) name:@"present" object:nil];
-  self.viewController = [JASidePanelController new];
-  self.viewController.shouldDelegateAutorotateToVisiblePanel = NO;
-  self.viewController.leftPanel = [LeftViewC new];
-  self.viewController.leftGapPercentage = 0.4;
-  self.viewController.rightPanel = [RightViewC new];
-  
-  CenterViewC *centerC = [CenterViewC new];
-  centerC.navigationBarTitle = @"周边活动";
-  MLNavigationController *navCtrl = [[[MLNavigationController alloc]initWithRootViewController:centerC]autorelease];
-  self.viewController.centerPanel = navCtrl;
-  
-  //self.viewController.centerPanel = [[UINavigationController alloc]initWithRootViewController:[CenterViewC new]];
-  [self.viewController.centerPanel.view custom:[navCtrl navigationBar]];
-  
-  self.window.rootViewController = self.viewController;
-  self.window.backgroundColor = [UIColor whiteColor];
-  [self.window makeKeyAndVisible];
-  return YES;
+	  CenterViewC *centerC = [CenterViewC new];
+  	centerC.navigationBarTitle = @"周边活动";
+	  MLNavigationController *navCtrl = [[[MLNavigationController alloc]initWithRootViewController:centerC]autorelease];
+  	 self.viewController.centerPanel = navCtrl;
+   	[self.viewController.centerPanel.view custom:[navCtrl navigationBar]];
+    self.window.rootViewController = self.viewController;
+    self.window.backgroundColor = [UIColor blackColor];
+    [self.window makeKeyAndVisible];
+    return YES;
 }
 
 - (void)receivingMethodOnListener:(NSNotification*)notification{
-  NSString *str  = notification.object;
-  if ([str isEqualToString:@"presentCenter"]) {
-    [self.viewController showCenterPanelAnimated:YES];
-  }else if ([str isEqualToString:@"presentInput"]){
-    InputVC *inputVC = [[InputVC alloc]init];
-    [self.viewController presentModalViewController:inputVC animated:YES];
-    [inputVC release];
-  }
+     NSString *str  = notification.object;
+    if ([str isEqualToString:@"presentCenter"]) {
+        [self.viewController showCenterPanelAnimated:YES];
+    }else if ([str isEqualToString:@"presentInput"]){
+        InputVC *inputVC = [[InputVC alloc]init];
+        [self.viewController presentModalViewController:inputVC animated:YES];
+        [inputVC release];
+    }
 }
 
 
 - (void)applicationWillResignActive:(UIApplication *)application
 {
-  // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
-  // Use this method to pause ongoing tasks, disable timers, and throttle down OpenGL ES frame rates. Games should use this method to pause the game.
+    // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
+    // Use this method to pause ongoing tasks, disable timers, and throttle down OpenGL ES frame rates. Games should use this method to pause the game.
 }
 
 - (void)applicationDidEnterBackground:(UIApplication *)application
 {
-  // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later.
-  // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
+    // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later. 
+    // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
 }
 
 - (void)applicationWillEnterForeground:(UIApplication *)application
 {
-  // Called as part of the transition from the background to the inactive state; here you can undo many of the changes made on entering the background.
+    // Called as part of the transition from the background to the inactive state; here you can undo many of the changes made on entering the background.
 }
 
 - (void)applicationDidBecomeActive:(UIApplication *)application
 {
-  // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
+    // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
 }
 
 - (void)applicationWillTerminate:(UIApplication *)application
 {
-  // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+    // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
 }
 
 @end
