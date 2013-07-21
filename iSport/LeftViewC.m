@@ -43,7 +43,7 @@
   
   self.view.backgroundColor = [UIColor colorWithRed:0.145 green:0.161 blue:0.196 alpha:1.000];
   
-  _listArray = [[NSMutableArray alloc]initWithObjects:@{@"image":@"sendMsg",@"title":@"发送"},@{@"image":@"basketball",@"title":@"篮球"},@{@"image":@"football",@"title":@"足球"},@{@"image":@"badminton",@"title":@"羽毛球"},@{@"image":@"pingpong",@"title":@"乒乓球"},@{@"image":@"tennis",@"title":@"网球"},nil];
+  _listArray = [[NSMutableArray alloc]initWithObjects:@{@"image":@"sendMsg",@"title":@"发送"},@{@"image":@"home",@"title":@"周边活动"},@{@"image":@"basketball",@"title":@"篮球"},@{@"image":@"football",@"title":@"足球"},@{@"image":@"badminton",@"title":@"羽毛球"},@{@"image":@"pingpong",@"title":@"乒乓球"},@{@"image":@"tennis",@"title":@"网球"},nil];
   
     _tableView = [[UITableView alloc]initWithFrame:CGRectMake(0,0,
                                                             self.view.frame.size.width,
@@ -53,6 +53,9 @@
   _tableView.backgroundColor=[UIColor clearColor];
     [_tableView setSeparatorStyle:UITableViewCellSeparatorStyleNone];
   [self.view addSubview:_tableView];
+    UIImageView *setImg = [[UIImageView alloc]initWithFrame:CGRectMake(20, self.view.frame.size.height - 40, 18, 18)];
+    setImg.image = [UIImage imageNamed:@"set"];
+    [self.view addSubview:setImg];
 }
 
 #pragma mark -
@@ -60,7 +63,7 @@
 
 /** 返回一共有几组记录*/
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 7;
+    return 8;
 }
 
 /** 行高*/
@@ -88,8 +91,9 @@
         imageView.image = [UIImage imageNamed:@"test.png"];
         [cell addSubview:imageView];
         [imageView release];
-        SeperateLine *line = [[SeperateLine alloc]initWithFrame:CGRectMake(0, 130, 320, 2)];
-        [cell addSubview:line];
+        UIImageView *lineImage = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"line"]];
+        lineImage.frame = CGRectMake(0, 130, 320, 2);
+        [cell addSubview:lineImage];
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
         return cell;
     }
@@ -104,18 +108,25 @@
     imageView.image = [UIImage imageNamed:imageStr];
     UILabel *title = (UILabel *)[cell viewWithTag:102];
     title.text = [[_listArray objectAtIndex:indexPath.row-1] objectForKey:@"title"];
-    SeperateLine *line = [[SeperateLine alloc]init];
-    line.frame = CGRectMake(0, 44, 320, 2);
+    UIImageView *lineImage = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"line"]];
+    lineImage.frame = CGRectMake(0, 44, 320, 2);
     cell.selectedBackgroundView = [[[UIView alloc] initWithFrame:cell.frame] autorelease];
     cell.selectedBackgroundView.backgroundColor = [UIColor colorWithRed:0.059 green:0.063 blue:0.075 alpha:1.000];
-    [cell addSubview:line];
+    [cell addSubview:lineImage];
     return cell;
 }
 
 /** 处理Cell点击*/
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    if (indexPath.row == 0) {
+        return;
+    }
+    
     if (indexPath.row == 1) {
         [[NSNotificationCenter defaultCenter] postNotificationName:@"present" object:@"presentInput"];
+    }else if(indexPath.row == 2){
+        [[NSNotificationCenter defaultCenter] postNotificationName:@"present" object:@"presentCenter"];
+        [[NSNotificationCenter defaultCenter] postNotificationName:@"refresh" object:nil];
     }else{
         [[NSNotificationCenter defaultCenter] postNotificationName:@"present" object:@"presentCenter"];
         [[NSNotificationCenter defaultCenter] postNotificationName:@"updateData" object:[ListData sortListData:indexPath.row]];

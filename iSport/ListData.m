@@ -39,7 +39,7 @@
     NSString *plistPath = [[NSBundle mainBundle] pathForResource:@"ModelTest" ofType:@"plist"];
     NSMutableArray *allArray = [[NSMutableArray alloc]initWithContentsOfFile:plistPath];
         [allArray enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
-            if ([[obj objectForKey:@"kBallType"]intValue] == sort - 2) {
+            if ([[obj objectForKey:@"kBallType"]intValue] == sort - 3) {
                 sportMessage *sportMsg = [sportMessage new];
                 sportMsg.ID = [obj objectForKey:@"ID"];
                 sportMsg.message = [obj objectForKey:@"message"];

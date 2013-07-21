@@ -38,17 +38,14 @@
     self.viewController = [JASidePanelController new];
     self.viewController.shouldDelegateAutorotateToVisiblePanel = NO;
     self.viewController.leftPanel = [LeftViewC new];
-    self.viewController.leftGapPercentage = 0.4;
+    self.viewController.leftGapPercentage = 0.5;
     self.viewController.rightPanel = [RightViewC new];
   
-  MLNavigationController *navCtrl = [[[MLNavigationController alloc]initWithRootViewController:[CenterViewC new]]autorelease];
-  self.viewController.centerPanel = navCtrl;
-  
-    //self.viewController.centerPanel = [[UINavigationController alloc]initWithRootViewController:[CenterViewC new]];
-  [self.viewController.centerPanel.view custom:[navCtrl navigationBar]];
-  
+    MLNavigationController *navCtrl = [[[MLNavigationController alloc]initWithRootViewController:[CenterViewC new]]autorelease];
+   self.viewController.centerPanel = navCtrl;
+   [self.viewController.centerPanel.view custom:[navCtrl navigationBar]];
     self.window.rootViewController = self.viewController;
-    self.window.backgroundColor = [UIColor whiteColor];
+    self.window.backgroundColor = [UIColor blackColor];
     [self.window makeKeyAndVisible];
     return YES;
 }

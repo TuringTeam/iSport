@@ -163,13 +163,13 @@
   [self.publishTimeLabel setX:[self.messageLabel x]];
   
   [self.distanceLabel sizeToFit];
-  CGFloat distabceLabelOriginX = [self.sportImage left] - [self.distanceLabel width] - 10;
+  CGFloat distabceLabelOriginX = [self.sportImage left] - [self.distanceLabel width] - 20;
   [self.distanceLabel setY:3];
   [self.distanceLabel setX:distabceLabelOriginX];
   
   [self.timeUpLabel sizeToFit];
   [self.timeUpLabel setY:labelOriginY];
-  [self.timeUpLabel setX:320 - [self.timeUpLabel width] - 10];
+  [self.timeUpLabel setX:320 - [self.timeUpLabel width] - 30];
   
   
   [self.publishTimeLabel sizeToFit];
