@@ -14,7 +14,8 @@
 #import "JASidePanelController.h"
 #import "MLNavigationController.h"
 #import "UIView+customBackground.h"
-#import "ListData.h"
+#import "InputVC.h"
+
 @implementation AppDelegate
 
 - (void)dealloc
@@ -26,17 +27,14 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     self.window = [[[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]] autorelease];
+    
     _mapManager = [[BMKMapManager alloc]init];
     // 如果要关注网络及授权验证事件，请设定     generalDelegate参数
     BOOL ret = [_mapManager start:@"CE7C2024B66924A774B80A7A4836E3E0607C5049"  generalDelegate:nil];
     if (!ret) {
         NSLog(@"manager start failed!");
     }
-    
-    NSMutableArray *array = [ListData sortListData:3];
-    
-    NSLog(@"%@",[array description]);
-    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(receivingMethodOnListener:) name:@"present" object:nil];
     self.viewController = [JASidePanelController new];
     self.viewController.shouldDelegateAutorotateToVisiblePanel = NO;
     self.viewController.leftPanel = [LeftViewC new];
@@ -45,13 +43,23 @@
   
   MLNavigationController *navCtrl = [[[MLNavigationController alloc]initWithRootViewController:[CenterViewC new]]autorelease];
   self.viewController.centerPanel = navCtrl;
+  
+    //self.viewController.centerPanel = [[UINavigationController alloc]initWithRootViewController:[CenterViewC new]];
   [self.viewController.centerPanel.view custom:[navCtrl navigationBar]];
-
+  
     self.window.rootViewController = self.viewController;
-    self.window.backgroundColor = [UIColor clearColor];
+    self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
     return YES;
 }
+
+- (void)receivingMethodOnListener:(NSNotification*)notification{
+    
+    InputVC *inputVC = [[InputVC alloc]init];
+    [self.viewController presentModalViewController:inputVC animated:YES];
+    [inputVC release];
+}
+
 
 - (void)applicationWillResignActive:(UIApplication *)application
 {

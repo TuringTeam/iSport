@@ -8,6 +8,7 @@
 
 #import "LeftViewC.h"
 #import "ListData.h"
+#import "InputViewController.h"
 @interface SeperateLine : UIView
 
 @end
@@ -74,7 +75,6 @@
 /** 创建TableViewCell*/
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-
     if (indexPath.row == 0) {
         UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cellHeader"];
         if(cell == nil){
@@ -115,9 +115,10 @@
 
 /** 处理Cell点击*/
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-
+    if (indexPath.row == 0) {
+        [[NSNotificationCenter defaultCenter] postNotificationName:@"present" object:nil];
+    }
 }
-
 
 - (void)didReceiveMemoryWarning
 {
