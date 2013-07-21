@@ -103,7 +103,13 @@
   [self clearCellContent];
   sportMessage *sport = object;
   
-  [self.avatarView setImage:[UIImage imageNamed:@"test"]];
+  if (sport.headImage) {
+    
+    NSString *imageName = [NSString stringWithFormat:@"%@.jpg",sport.headImage];
+    [self.avatarView setImage:[UIImage imageNamed:imageName]];
+  }
+  
+  //[self.avatarView setImage:[UIImage imageNamed:@"test"]];
   
   if (sport.message) {
     [self.messageLabel setText:sport.message];

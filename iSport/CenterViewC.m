@@ -11,28 +11,33 @@
 #import "CenterViewCell.h"
 #import "ListTableView.h"
 #import "DetailViewController.h"
+#import "sportMessage.h"
+#import "ListData.h"
 
 @interface CenterViewC ()
 
 @end
 
 @implementation CenterViewC
+
 - (void)viewDidLoad
 {
   [super viewDidLoad];
   
-  self.listArray = [NSMutableArray new];
+  //self.listArray = [NSMutableArray new];
   
-  for (NSInteger i = 0; i < 30; i++) {
-    sportMessage *sport = [[sportMessage alloc] init];
-    sport.ID = [NSString stringWithFormat:@"ID%d",i];
-    sport.message = [NSString stringWithFormat:@"清华大学校篮球社，假期没事，组团打篮球，有一起的的么？篮球已有还缺五人!"];
-    sport.pubTimeStr = [NSString stringWithFormat:@"%d分钟前",i+1];
-    sport.endTimeDataStr = [NSString stringWithFormat:@"%d小时后",i+1];
-    sport.ballType = kBasketball;
-    [self.listArray addObject:sport];
-  }
+//    for (NSInteger i = 0; i < 30; i++) {
+//      sportMessage *sport = [[sportMessage alloc] init];
+//      sport.ID = [NSString stringWithFormat:@"ID%d",i];
+//      sport.message = [NSString stringWithFormat:@"清华大学校篮球社，假期没事，组团打篮球，有一起的的么？篮球已有还缺五人!"];
+//      sport.pubTimeStr = [NSString stringWithFormat:@"%d分钟前",i+1];
+//      sport.endTimeDataStr = [NSString stringWithFormat:@"%d小时后",i+1];
+//      sport.ballType = kBasketball;
+//      [self.listArray addObject:sport];
+//    }
   
+  self.listArray = [ListData allListData];
+  NSLog(@"%@",self.listArray);
   self.tableView = [[ListTableView alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
   
   _tableView.delegate=self;
@@ -78,7 +83,7 @@
 
 /** 返回一共有多少列*/
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-  return self.listArray.count;
+  return 1;
 }
 
 /** 行高*/
@@ -90,7 +95,7 @@
 
 /** 返回一共有几组记录*/
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-  return 1;
+  return self.listArray.count;
 }
 
 /** 创建TableViewCell*/
