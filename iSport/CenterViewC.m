@@ -145,7 +145,7 @@
   cell.selectionStyle = UITableViewCellSelectionStyleNone;
   cell.accessoryView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"ArrowRight"]];
   [cell bindCellObject:[self.listArray objectAtIndex:indexPath.row]];
-  
+  [cell setDistanceLabelText:[self.distanceArray objectAtIndex:indexPath.row]];
   return cell;
 }
 

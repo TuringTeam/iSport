@@ -98,6 +98,11 @@
   
 }
 
+- (void)setDistanceLabelText:(NSString *)text
+{
+	[self.distanceLabel setText:text];
+}
+
 - (void)bindCellObject:(id)object
 {
   [self clearCellContent];
