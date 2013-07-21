@@ -7,6 +7,7 @@
 //
 
 #import "LeftViewC.h"
+#import "InputViewController.h"
 @interface LeftViewC ()
 
 @end
@@ -73,7 +74,11 @@
 
 /** 处理Cell点击*/
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-  
+    if (indexPath.row == 0) {
+        [[NSNotificationCenter defaultCenter] postNotificationName:@"present" object:nil];
+        
+    }
+    
 }
 
 

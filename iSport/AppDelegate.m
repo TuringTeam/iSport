@@ -14,6 +14,7 @@
 #import "JASidePanelController.h"
 #import "MLNavigationController.h"
 #import "UIView+customBackground.h"
+#import "InputVC.h"
 
 @implementation AppDelegate
 
@@ -33,7 +34,7 @@
     if (!ret) {
         NSLog(@"manager start failed!");
     }
-    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(receivingMethodOnListener:) name:@"present" object:nil];
     self.viewController = [JASidePanelController new];
     self.viewController.shouldDelegateAutorotateToVisiblePanel = NO;
     self.viewController.leftPanel = [LeftViewC new];
@@ -51,6 +52,14 @@
     [self.window makeKeyAndVisible];
     return YES;
 }
+
+- (void)receivingMethodOnListener:(NSNotification*)notification{
+    
+    InputVC *inputVC = [[InputVC alloc]init];
+    [self.viewController presentModalViewController:inputVC animated:YES];
+    [inputVC release];
+}
+
 
 - (void)applicationWillResignActive:(UIApplication *)application
 {

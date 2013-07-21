@@ -1,22 +1,19 @@
 //
-//  InputViewController.m
+//  InputVC.m
 //  iSport
 //
 //  Created by Felix_Y on 13-7-21.
 //  Copyright (c) 2013年 qfpay. All rights reserved.
 //
 
-#import "InputViewController.h"
+#import "InputVC.h"
 
-@interface InputViewController ()
+@interface InputVC ()
 
 @end
 
-@implementation InputViewController
-@synthesize sMsg;
-@synthesize selectorTimeLimiteV = _selectorTimeLimiteV;
-@synthesize selectorTypeV = _selectorTypeV;
-    
+@implementation InputVC
+
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -28,32 +25,43 @@
 
 - (void)viewDidLoad
 {
-    isCharges = NO;
     [super viewDidLoad];
-   
-    //YOU CAN ALSO ASSIGN THE DATA SOURCE AND THE DELEGATE IN CODE (IT'S ALREADY DONE IN NIB, BUT DO AS YOU PREFER)
-    self.selectorTimeLimiteV.dataSource = self;
-    self.selectorTimeLimiteV.delegate = self;
-    self.selectorTimeLimiteV.shouldBeTransparent = YES;
-    self.selectorTimeLimiteV.horizontalScrolling = NO;
-    self.selectorTimeLimiteV.tag = 0010;
+    [self.infoTextView becomeFirstResponder];
     
-    self.selectorTypeV.dataSource = self;
-    self.selectorTypeV.delegate = self;
-    self.selectorTypeV.shouldBeTransparent = YES;
-    self.selectorTypeV.horizontalScrolling = YES;
-    self.selectorTypeV.tag = 0020;
+    //YOU CAN ALSO ASSIGN THE DATA SOURCE AND THE DELEGATE IN CODE (IT'S ALREADY DONE IN NIB, BUT DO AS YOU PREFER)
+    self.timeLimieView.dataSource = self;
+    self.timeLimieView.delegate = self;
+    self.timeLimieView.shouldBeTransparent = YES;
+    self.timeLimieView.horizontalScrolling = YES;
+    self.timeLimieView.tag = 0010;
+    
+    self.typeSelectView.dataSource = self;
+    self.typeSelectView.delegate = self;
+    self.typeSelectView.shouldBeTransparent = YES;
+    self.typeSelectView.horizontalScrolling = YES;
+    self.typeSelectView.tag = 0020;
     
     //You can toggle Debug mode on selectors to see the layout
-    self.selectorTimeLimiteV.debugEnabled = NO;
-    self.selectorTypeV.debugEnabled = NO;
-	// Do any additional setup after loading the view.
+    self.timeLimieView.debugEnabled = NO;
+    self.typeSelectView.debugEnabled = NO;
+    // Do any additional setup after loading the view from its nib.
+}
+
+- (void)didReceiveMemoryWarning
+{
+    [super didReceiveMemoryWarning];
+    // Dispose of any resources that can be recreated.
+}
+
+- (IBAction)isCharges:(id)sender{
+
+
 }
 
 #pragma IZValueSelector dataSource
 - (NSInteger)numberOfRowsInSelector:(IZValueSelectorView *)valueSelector {
     if (valueSelector.tag == 0010) {
-        return 6;
+        return 5;
     }
     else {
         return 5;
@@ -68,15 +76,15 @@
 }
 
 - (CGFloat)rowWidthInSelector:(IZValueSelectorView *)valueSelector {
-    return 30.0;
+    return 70.0;
 }
 
 
 - (UIView *)selector:(IZValueSelectorView *)valueSelector viewForRowAtIndex:(NSInteger)index {
     UILabel * label = nil;
     if (valueSelector.tag == 0010) {
-        label = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 30, self.selectorTimeLimiteV.frame.size.height)];
-        switch (index.numberOfRowsInSelector) {
+        label = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 50, 30)];
+        switch (index) {
             case 0:
                 label.text = [NSString stringWithFormat:@"1小时"];
                 break;
@@ -99,8 +107,8 @@
         }
     }
     else {
-        label = [[UILabel alloc] initWithFrame:CGRectMake(0, 0,30, self.selectorTypeV.frame.size.width)];
-        switch (index.numberOfRowsInSelector) {
+        label = [[UILabel alloc] initWithFrame:CGRectMake(0, 0,55, 30)];
+        switch (index) {
             case 0:
                 label.text = [NSString stringWithFormat:@"篮球"];
                 break;
@@ -118,24 +126,24 @@
                 break;
             default:
                 break;
+        }
     }
-    
-    label.textAlignment =  NSTextAlignmentCenter;
+    label.textAlignment =  UITextAlignmentCenter;
     label.backgroundColor = [UIColor clearColor];
     return label;
+    
 }
-
 - (CGRect)rectForSelectionInSelector:(IZValueSelectorView *)valueSelector {
     //Just return a rect in which you want the selector image to appear
     //Use the IZValueSelector coordinates
     //Basically the x will be 0
     //y will be the origin of your image
     //width and height will be the same as in your selector image
-    if (valueSelector == self.selectorHorizontal) {
-        return CGRectMake(self.selectorHorizontal.frame.size.width/2 - 35.0, 0.0, 70.0, 90.0);
+    if (valueSelector == self.timeLimieView) {
+        return CGRectMake(self.timeLimieView.frame.size.width/2 - 35.0, 0.0, 70.0, 90.0);
     }
     else {
-        return CGRectMake(0.0, self.selectorVertical.frame.size.height/2 - 35.0, 90.0, 70.0);
+        return CGRectMake(0.0, self.typeSelectView.frame.size.height/2 - 35.0, 90.0, 70.0);
     }
     
 }
@@ -145,25 +153,18 @@
     NSLog(@"Selected index %d",index);
 }
 
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-
-
-
 - (void)dealloc {
-    [_infoTF release];
+    [_typeSelectView release];
+    [_timeLimieView release];
     [_isChargesBtn release];
-    [_timeLimitePV release];
+    [_infoTextView release];
     [super dealloc];
 }
-
 - (void)viewDidUnload {
-    [self setInfoTF:nil];
+    [self setTypeSelectView:nil];
+    [self setTimeLimieView:nil];
     [self setIsChargesBtn:nil];
-    [self setTimeLimitePV:nil];
+    [self setInfoTextView:nil];
     [super viewDidUnload];
 }
 @end
